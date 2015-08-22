@@ -32,7 +32,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         
-        [self setBackgroundColor:RGB(22,22,22)];
+        [self setBackgroundColor:[UIColor whiteColor]];
         
         self.layer.cornerRadius = self.frame.size.width/2.0;
         self.layer.masksToBounds = YES;

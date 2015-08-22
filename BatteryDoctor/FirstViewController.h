@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIScrollView+UITouch.h"
 
 @interface FirstViewController : UIViewController
 

@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController">
             <connections>
                 <outlet property="batteryView" destination="5CW-Yo-uLm" id="TDy-kF-6zE"/>
+                <outlet property="signView" destination="oDi-Zv-m4C" id="7v6-mI-0DI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -143,16 +144,49 @@
                                         <constraint firstItem="9Vo-Er-FTp" firstAttribute="leading" secondItem="Wfe-L7-Uhg" secondAttribute="leading" constant="57" id="vCH-v6-Fkg"/>
                                     </constraints>
                                 </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDi-Zv-m4C">
+                                    <rect key="frame" x="0.0" y="376" width="586" height="35"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每日签到赚流量" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="770-OF-MYo">
+                                            <rect key="frame" x="20" y="7" width="200" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="3od-pu-w84"/>
+                                                <constraint firstAttribute="width" constant="200" id="CiD-Wa-3bU"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Mh-w4-sd8">
+                                            <rect key="frame" x="564" y="8" width="12" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Gby-vG-KvU"/>
+                                                <constraint firstAttribute="width" constant="12" id="Sdm-8C-juu"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="770-OF-MYo" secondAttribute="centerY" id="BM5-5H-Akn"/>
+                                        <constraint firstItem="770-OF-MYo" firstAttribute="leading" secondItem="oDi-Zv-m4C" secondAttribute="leading" constant="20" id="IVw-gJ-HUo"/>
+                                        <constraint firstAttribute="centerY" secondItem="0Mh-w4-sd8" secondAttribute="centerY" id="Rwd-40-79O"/>
+                                        <constraint firstAttribute="trailing" secondItem="0Mh-w4-sd8" secondAttribute="trailing" constant="10" id="sK1-Fg-hX4"/>
+                                        <constraint firstAttribute="height" constant="35" id="xhP-Yq-2qB"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="centerX" secondItem="Wfe-L7-Uhg" secondAttribute="centerX" id="0oe-ty-QNs"/>
+                                <constraint firstAttribute="trailing" secondItem="oDi-Zv-m4C" secondAttribute="trailing" id="41V-Av-lNT"/>
+                                <constraint firstItem="oDi-Zv-m4C" firstAttribute="leading" secondItem="wOR-Tc-d05" secondAttribute="leading" id="9Kb-Sx-WRl"/>
                                 <constraint firstItem="Wfe-L7-Uhg" firstAttribute="leading" secondItem="wOR-Tc-d05" secondAttribute="leading" constant="20" id="Anu-55-uRm"/>
                                 <constraint firstAttribute="height" constant="600" id="IpP-E0-u8M"/>
                                 <constraint firstItem="3AJ-ei-HuC" firstAttribute="leading" secondItem="wOR-Tc-d05" secondAttribute="leading" constant="20" id="NH1-Ka-olR"/>
                                 <constraint firstItem="Wfe-L7-Uhg" firstAttribute="top" secondItem="5CW-Yo-uLm" secondAttribute="bottom" constant="20" id="OQH-kC-gGW"/>
                                 <constraint firstAttribute="centerX" secondItem="5CW-Yo-uLm" secondAttribute="centerX" id="SLo-eB-Gk0"/>
                                 <constraint firstItem="Wfe-L7-Uhg" firstAttribute="top" secondItem="3AJ-ei-HuC" secondAttribute="bottom" constant="20" id="T7z-o5-85G"/>
+                                <constraint firstItem="oDi-Zv-m4C" firstAttribute="top" secondItem="Wfe-L7-Uhg" secondAttribute="bottom" constant="10" id="TOq-RY-9Xc"/>
                                 <constraint firstAttribute="trailing" secondItem="Wfe-L7-Uhg" secondAttribute="trailing" constant="20" id="gKQ-PH-lbD"/>
                                 <constraint firstItem="5CW-Yo-uLm" firstAttribute="top" secondItem="wOR-Tc-d05" secondAttribute="top" constant="40" id="gYW-3U-31b"/>
                                 <constraint firstItem="3AJ-ei-HuC" firstAttribute="top" secondItem="5CW-Yo-uLm" secondAttribute="bottom" constant="15" id="jk4-Ej-wvW"/>
@@ -185,7 +219,10 @@
                 <constraint firstAttribute="trailing" secondItem="5Ni-Dx-FtT" secondAttribute="trailing" id="p29-df-sYf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="377" y="398.5"/>
+            <point key="canvasLocation" x="184" y="417.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="arrow.png" width="13" height="24"/>
+    </resources>
 </document>

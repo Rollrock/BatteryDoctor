@@ -30,8 +30,8 @@
         self.backgroundColor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1];
         
         
-        imgName = @[@"tab_1",@"tab_2",@"tab_3"];
-        hImgName = @[@"tab_1_h",@"tab_2_h",@"tab_3_h"];
+        imgName = @[@"tab_1",@"tab_2",@"tab_3",@"tab_4"];
+        hImgName = @[@"tab_1_h",@"tab_2_h",@"tab_3_h",@"tab_4_h"];
         
         tabViewArray = [NSMutableArray new];
         //

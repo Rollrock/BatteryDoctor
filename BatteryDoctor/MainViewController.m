@@ -10,6 +10,7 @@
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
+#import "FourthViewController.h"
 
 
 @interface MainViewController ()<RockTabDelegate>
@@ -21,6 +22,7 @@
     UINavigationController * naVC1;
     UINavigationController * naVC2;
     UINavigationController * naVC3;
+    UINavigationController * naVC4;
     
     NSMutableArray * navArray;
     
@@ -60,10 +62,14 @@
     
     ThirdViewController * tVC = [[ThirdViewController alloc]initWithNibName:@"ThirdViewController" bundle:nil];
     naVC3 = [[UINavigationController alloc]initWithRootViewController:tVC];
+
+    FourthViewController * foVC = [[FourthViewController alloc]initWithNibName:@"FourthViewController" bundle:nil];
+    naVC4 = [[UINavigationController alloc]initWithRootViewController:foVC];
     
     [navArray addObject:naVC1];
     [navArray addObject:naVC2];
     [navArray addObject:naVC3];
+    [navArray addObject:naVC4];
     
     [self.view insertSubview:naVC1.view belowSubview:tabView];
 
