@@ -236,7 +236,6 @@
 
 -(void)layoutADV
 {
-    
     /*
     AppDelegate * appDel = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     

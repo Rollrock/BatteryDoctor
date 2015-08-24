@@ -57,7 +57,7 @@
     [self layoutAdv];
     
     //
-    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(15, [UIScreen mainScreen].bounds.size.height-55, 50, 50)];
+    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(15, [UIScreen mainScreen].bounds.size.height-50-60, 50, 50)];
     [btn setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backClicked) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:btn];
@@ -80,7 +80,7 @@
 
 
 -(void)layoutAdv
-{    
+{
     BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
     _baiduView.AdType = BaiduMobAdViewTypeBanner;
     _baiduView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-60-50, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);

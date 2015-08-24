@@ -13,7 +13,7 @@
 #import "AppDelegate.h"
 
 
-@interface CleanViewController ()<BaiduMobAdInterstitialDelegate>
+@interface CleanViewController ()<BaiduMobAdInterstitialDelegate,UIAlertViewDelegate>
 {
     BaiduMobAdInterstitial* adInterstitial;
     BOOL _adloaded;
@@ -247,6 +247,11 @@
 
 - (IBAction)netCleanClicked
 {
+    if( ! [self goodRated] )
+    {
+        return;
+    }
+    
     [self setCleanFlag:STORE_NET_CLEAN_DATE];
     
     [SVProgressHUD showWithStatus:@"清理中..." maskType:SVProgressHUDMaskTypeClear];
@@ -256,6 +261,11 @@
 
 - (IBAction)storageCleanClicked
 {
+    if( ! [self goodRated] )
+    {
+        return;
+    }
+    
     [self setCleanFlag:STORE_STORAGE_CLEAN_DATE];
     
     [SVProgressHUD showWithStatus:@"清理中..." maskType:SVProgressHUDMaskTypeClear];
@@ -265,6 +275,11 @@
 
 - (IBAction)batteryCleanClicked
 {
+    if( ! [self goodRated] )
+    {
+        return;
+    }
+    
     [self setCleanFlag:STORE_BATTERY_CLEAN_DATE];
     
     [SVProgressHUD showWithStatus:@"清理中..." maskType:SVProgressHUDMaskTypeClear];
@@ -272,4 +287,66 @@
     [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(dismissSVP) userInfo:nil repeats:NO];
 
 }
+
+-(BOOL)goodRated
+{
+    if( ! [self showForceRate] )
+    {
+        return YES;
+    }
+    
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    BOOL bFlag = [def boolForKey:STORE_RATE_FLAG];
+    
+    if( !bFlag )
+    {
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"给个5星好评吧，不然给你清理系统没动力啊.... " delegate:self cancelButtonTitle:@"无情拒绝" otherButtonTitles:@"现在就去", nil];
+        [alert show];
+    }
+    
+    return bFlag;
+}
+
+-(void)setGoodRated
+{
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    [def setBool:YES forKey:STORE_RATE_FLAG];
+}
+
+-(BOOL)showForceRate
+{
+    NSDateComponents * data = [[NSDateComponents alloc]init];
+    NSCalendar * cal = [NSCalendar currentCalendar];
+    
+    [data setCalendar:cal];
+    [data setYear:EXTERN_YEAR];
+    [data setMonth:EXTERN_MONTH];
+    [data setDay:EXTERN_DAY];
+    
+    NSDate * farDate = [cal dateFromComponents:data];
+    
+    NSDate *now = [NSDate date];
+    
+    NSTimeInterval farSec = [farDate timeIntervalSince1970];
+    NSTimeInterval nowSec = [now timeIntervalSince1970];
+    
+    if( nowSec - farSec >= 0 )
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
+#pragma
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if( buttonIndex == 1 )
+    {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:SHARE_URL]];
+        
+        [self setGoodRated];
+    }
+}
+
 @end

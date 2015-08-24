@@ -8,10 +8,14 @@
 
 #import "SecondViewController.h"
 #import "BaiduMobAdView.h"
+@import GoogleMobileAds;
 
-
-@interface SecondViewController ()<BaiduMobAdViewDelegate>
-
+@interface SecondViewController ()<BaiduMobAdViewDelegate,UIScrollViewDelegate>
+{
+    BaiduMobAdView * _baiduView;
+    GADBannerView * _bannerView;
+    
+}
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewWidhtConst;
 
@@ -66,28 +70,57 @@
 
 -(void)layoutAdv
 {
-
-     BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
+     _baiduView = [[BaiduMobAdView alloc]init];
      _baiduView.AdType = BaiduMobAdViewTypeBanner;
      _baiduView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-60-50, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
      _baiduView.delegate = self;
      [self.view addSubview:_baiduView];
      [_baiduView start];
     
-    /*
+    
     CGPoint pt ;
     
     pt = CGPointMake(0, [UIScreen mainScreen].bounds.size.height-60-50);
-    GADBannerView * _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner origin:pt];
+    _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner origin:pt];
     
     _bannerView.adUnitID = @"ca-app-pub-3058205099381432/7929977146";//调用你的id
     _bannerView.rootViewController = self;
     [_bannerView loadRequest:[GADRequest request]];
     
     [self.view addSubview:_bannerView];
-    */
+    
 }
 
+#pragma UIScrollView Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat offset = [scrollView contentOffset].x;
+    
+    NSLog(@"offset:%f frame.y:%f",offset,scrollView.frame.size.width);
+    
+    if( ((int)offset) % ((int)scrollView.frame.size.width) == 0 )
+    {
+        static BOOL bFlag = NO;
+        
+        if( bFlag)
+        {
+            //[self.view bringSubviewToFront:_baiduView];
+            
+            _baiduView.hidden = YES;
+            _bannerView.hidden = NO;
+        }
+        else
+        {
+            //[self.view bringSubviewToFront:_bannerView];
+            
+            _baiduView.hidden = NO;
+            _bannerView.hidden = YES;
+        }
+        
+        bFlag = !bFlag;
+    }
+}
 
 
 - (void)didReceiveMemoryWarning {

@@ -27,7 +27,7 @@
 
 #define COLOR_FROM_HEX(hexValue) ([UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0])
 
-
+////用于在用户准备清理的时候  强制让其打分///////
 #define EXTERN_YEAR  2015
 #define EXTERN_MONTH 9
 #define EXTERN_DAY   5
@@ -38,9 +38,9 @@
 #define DataCounterKeyWiFiReceived   @"WiFiReceived"
 
 
-#define SHARE_TEXT @"XY苹果助手-性能优化网络提速，安装量最大的手机优化APP  https://itunes.apple.com/us/app/xy-shou-ji-zhu-shou-xing-neng/id1020595864?l=zh&ls=1&mt=8"
-#define SHARE_URL  @"https://itunes.apple.com/us/app/xy-shou-ji-zhu-shou-xing-neng/id1020595864?l=zh&ls=1&mt=8"
-#define SHARE_IMAGE  ([UIImage imageNamed:@"back"])
+#define SHARE_TEXT @"电池医生-最好的电池保护优化专家，安装量最大的手机优化APP  https://itunes.apple.com/us/app/dian-chi-yi-sheng-zui-hao/id1033017816?l=zh&ls=1&mt=8"
+#define SHARE_URL  @"https://itunes.apple.com/us/app/dian-chi-yi-sheng-zui-hao/id1033017816?l=zh&ls=1&mt=8"
+#define SHARE_IMAGE  ([UIImage imageNamed:@"58"])
 
 #define UM_SHARE_KEY  @"55b1a17ee0f55a2205000ade"
 
@@ -48,6 +48,10 @@
 
 #define ADV_BUYED  @"ADV_BUYED"
 
+
+#define STORE_RATE_FLAG  @"STORE_RATE_FLAG" //在清理的时候 点击好评
+
+#define STORE_CHARGE_COUNT  @"STORE_CHARGE_COUNT"//充电次数
 #define STORE_NET_INFO  @"STORE_NET_INFO"
 #define STORE_SIGN_INFO  @"STORE_SIGN_INFO"
 //

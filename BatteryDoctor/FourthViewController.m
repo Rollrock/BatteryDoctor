@@ -106,9 +106,8 @@
     _waveView.layer.cornerRadius = _waveView.frame.size.width/2.0;
    
     //
-    [self drawBattery];
-    
-    [self getBatteryTime];
+    //[self drawBattery];
+    //[self getBatteryTime];
     
     //
     [self drawNetFlow];
@@ -268,119 +267,6 @@
     // 返回新的改变大小后的图片
     return scaledImage;
 }
-
-//电池百分比
--(CGFloat)getBatteryPercent
-{
-    return [SystemSharedServices batteryLevel]/100.0;
-}
-
--(void)getBatteryTime
-{
-    firstBatteryLevel = [SystemSharedServices batteryLevel];
-    curBatteryTime = [NSDate date];
-    
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(batteryCharged:)
-     name:UIDeviceBatteryLevelDidChangeNotification
-     object:nil
-     ];
-    
-    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(notiBattery) userInfo:nil repeats:NO];
-}
-
--(void)notiBattery
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:UIDeviceBatteryLevelDidChangeNotification object:nil];
-}
-
-- (void)batteryCharged:(NSNotification *)note
-{
-    float currBatteryLev = [SystemSharedServices batteryLevel];
- 
-    if( [SystemSharedServices fullyCharged] )
-    {
-        _batteryTimeLab.text = @"已充满";
-    }
-    else if( [SystemSharedServices charging] )
-    {
-        float avgChgSpeed = (firstBatteryLevel-0.1 - currBatteryLev)*1.0 / [curBatteryTime timeIntervalSinceNow];
-        
-        float remBatteryLev = 100 - currBatteryLev;
-        
-        NSInteger remSeconds = remBatteryLev / avgChgSpeed;
-        
-        _batteryTimeLab.text = [NSString stringWithFormat:@"%02ld:%02ld",(remSeconds)/3600,((remSeconds)%3600)/60];
-        
-        if( ((remSeconds)/3600== 0) && ((remSeconds)%3600/60 == 0))
-        {
-            _batteryTimeLab.text = @"已充满";
-        }
-        else if( avgChgSpeed == 0 )
-        {
-            _batteryTimeLab.text = @"计算中...";
-        }
-    }
-    //放电
-    else
-    {
-        float avgChgSpeed = fabs((firstBatteryLevel - currBatteryLev)*1.0 / [curBatteryTime timeIntervalSinceNow]);
-        
-        NSInteger remSeconds = currBatteryLev / avgChgSpeed;
-        
-        _batteryTimeLab.text = [NSString stringWithFormat:@"%02ld:%02ld",(remSeconds)/3600,((remSeconds)%3600)/60];
-        
-        if( firstBatteryLevel - currBatteryLev == 0 )
-        {
-             _batteryTimeLab.text = [NSString stringWithFormat:@"%02d:%02d",23,55];
-        }
-    }
-    
-    [self drawBattery];
-}
-
--(void)drawBattery
-{
-    for( UIView * view in [_batteryImgView subviews] )
-    {
-        [view removeFromSuperview];
-    }
-    
-    //
-    CGFloat precent = [self getBatteryPercent];
-    CGRect frame = _batteryImgView.bounds;
-    frame = CGRectMake(frame.origin.x, frame.origin.y+(1-precent)*frame.size.height, frame.size.width, frame.size.height*precent);
-    
-    CGImageRef imgRef = CGImageCreateWithImageInRect([[self scaleImage:[UIImage imageNamed:@"batteryUse"] toSize:CGSizeMake(_batteryImgView.frame.size.width, _batteryImgView.frame.size.height)] CGImage], frame);
-    UIImage * image = [UIImage imageWithCGImage:imgRef];
-    
-    UIImageView * imgView = [[UIImageView alloc]initWithFrame:frame];
-    imgView.image = image;
-    
-    [_batteryImgView addSubview:imgView];
-    
-    //如果是充电
-    if( [SystemSharedServices charging] )
-    {
-        _batteryStateLab.text = @"充满电还需要:";
-        
-        if( [SystemSharedServices fullyCharged] || precent == 1 )
-        {
-            _batteryTimeLab.text = @"已充满";
-        }
-    }
-    else
-    {
-        _batteryStateLab.text = @"电池可使用:";
-        
-        if( precent == 1 )
-        {
-            _batteryTimeLab.text = [NSString stringWithFormat:@"%02d:%02d",23,55];
-        }
-    }
-}
-
 /////////////////////////////////电池电量---end///////////////////////////////////////////////////
 
 
@@ -512,10 +398,11 @@
 }
 
 
-- (void)viewDidLayoutSubviews {
+- (void)viewDidLayoutSubviews
+{
     // VC just laid off its views
-    
-      _storeUsageView.frame = CGRectMake(_storeUsageView.frame.origin.x, _storeUsageView.frame.origin.y, _storeTotalView.frame.size.width*[[SystemSharedServices usedDiskSpaceinPercent] floatValue]/100.0, _storeTotalView.frame.size.height);
+
+    _storeUsageView.frame = CGRectMake(_storeUsageView.frame.origin.x, _storeUsageView.frame.origin.y, _storeTotalView.frame.size.width*[[SystemSharedServices usedDiskSpaceinPercent] floatValue]/100.0, _storeTotalView.frame.size.height);
     
     _storeFreeView.frame = CGRectMake(_storeFreeView.frame.origin.x, _storeFreeView.frame.origin.y, _storeTotalView.frame.size.width*(1-[[SystemSharedServices usedDiskSpaceinPercent] floatValue]/100.0), _storeTotalView.frame.size.height);
     
@@ -583,10 +470,7 @@
         return;
     }
 }
-
-
 ////
-
 
 - (NSString *)publisherId
 {
@@ -604,15 +488,6 @@
 
 -(void)layoutAdv
 {
-    /*
-    AppDelegate * appDel = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-    
-    if( ![appDel showAdv] )
-    {
-        return;
-    }
-     */
-    
     
     //顶部的 ADV
     BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];

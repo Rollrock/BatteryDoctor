@@ -56,7 +56,7 @@
     [_imgBgView addSubview:speedLab1];
     
     
-    UILabel * speedLab3 = [[UILabel alloc]initWithFrame:CGRectMake(170, 360, 100, 25)];
+    UILabel * speedLab3 = [[UILabel alloc]initWithFrame:CGRectMake(170, 340, 100, 25)];
     speedLab3.text = [self tranSpeed];
     speedLab3.font = [UIFont systemFontOfSize:20];
     [_imgBgView addSubview:speedLab3];

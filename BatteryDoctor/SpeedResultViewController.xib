@@ -17,9 +17,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speed.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yz5-pN-xIg">
-                    <rect key="frame" x="140" y="40" width="320" height="440"/>
+                    <rect key="frame" x="140" y="40" width="320" height="420"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="440" id="d5k-Bu-hAw"/>
+                        <constraint firstAttribute="height" constant="420" id="d5k-Bu-hAw"/>
                         <constraint firstAttribute="width" constant="320" id="ecX-dv-tyM"/>
                     </constraints>
                 </imageView>

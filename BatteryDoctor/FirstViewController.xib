@@ -7,7 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController">
             <connections>
+                <outlet property="batteryCapLab" destination="k1o-c9-2VZ" id="eRy-jg-dG5"/>
+                <outlet property="batteryHealthLab" destination="Nhf-Ij-An9" id="fOF-bI-2PQ"/>
+                <outlet property="batteryStateLab" destination="138-k2-9ew" id="vl2-V4-a42"/>
+                <outlet property="batteryTimeLab" destination="k0O-77-g3r" id="OJo-rX-Msk"/>
                 <outlet property="batteryView" destination="5CW-Yo-uLm" id="TDy-kF-6zE"/>
+                <outlet property="chargeCountLab" destination="to3-7k-iMB" id="s6s-1a-0dh"/>
                 <outlet property="signView" destination="oDi-Zv-m4C" id="7v6-mI-0DI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -17,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="586" height="731"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ni-Dx-FtT">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ni-Dx-FtT">
                     <rect key="frame" x="0.0" y="0.0" width="586" height="731"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOR-Tc-d05" userLabel="ContentView">
@@ -51,7 +56,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13时55分" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0O-77-g3r">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计算中..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0O-77-g3r">
                                             <rect key="frame" x="151" y="69" width="86" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="86" id="f6a-bi-Xvy"/>
@@ -101,7 +106,7 @@
                                             <color key="textColor" red="0.062745098040000002" green="0.81568627449999997" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1900毫安" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1o-c9-2VZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1570毫安" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1o-c9-2VZ">
                                             <rect key="frame" x="151" y="98" width="86" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="86" id="2td-hB-wQW"/>
@@ -219,7 +224,7 @@
                 <constraint firstAttribute="trailing" secondItem="5Ni-Dx-FtT" secondAttribute="trailing" id="p29-df-sYf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="184" y="417.5"/>
+            <point key="canvasLocation" x="-95" y="382.5"/>
         </view>
     </objects>
     <resources>
