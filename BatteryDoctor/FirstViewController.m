@@ -165,50 +165,6 @@
         
         _batteryStateLab.text = @"可使用:";
     }
-    
-    
-    //[self drawBattery];
-}
-
--(void)drawBattery
-{
-
-    /*
-    //
-    CGFloat precent = [self getBatteryPercent];
-    CGRect frame = _batteryImgView.bounds;
-    frame = CGRectMake(frame.origin.x, frame.origin.y+(1-precent)*frame.size.height, frame.size.width, frame.size.height*precent);
-    
-    CGImageRef imgRef = CGImageCreateWithImageInRect([[self scaleImage:[UIImage imageNamed:@"batteryUse"] toSize:CGSizeMake(_batteryImgView.frame.size.width, _batteryImgView.frame.size.height)] CGImage], frame);
-    UIImage * image = [UIImage imageWithCGImage:imgRef];
-    
-    UIImageView * imgView = [[UIImageView alloc]initWithFrame:frame];
-    imgView.image = image;
-    
-    [_batteryImgView addSubview:imgView];
-    
-    //如果是充电
-    if( [SystemSharedServices charging] )
-    {
-        _batteryStateLab.text = @"充满电还需要:";
-        
-        if( [SystemSharedServices fullyCharged] || precent == 1 )
-        {
-            _batteryTimeLab.text = @"已充满";
-        }
-    }
-    else
-    {
-        _batteryStateLab.text = @"电池可使用:";
-        
-        if( precent == 1 )
-        {
-            _batteryTimeLab.text = [NSString stringWithFormat:@"%02d:%02d",23,55];
-        }
-    }
-     */
-    
-    
 }
 
 
@@ -224,29 +180,31 @@
 
 -(void)layoutAdv
 {
-    /*
-    BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
-    _baiduView.AdType = BaiduMobAdViewTypeBanner;
-    _baiduView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-60-50, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
-    _baiduView.delegate = self;
-    [self.view addSubview:_baiduView];
-    [_baiduView start];
-     */
     
-    CGPoint pt ;
-    
-    pt = CGPointMake(0, [UIScreen mainScreen].bounds.size.height-60-50);
-    GADBannerView * _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner origin:pt];
-    
-    _bannerView.adUnitID = @"ca-app-pub-3058205099381432/7929977146";//调用你的id
-    _bannerView.rootViewController = self;
-    [_bannerView loadRequest:[GADRequest request]];
-    
-    [self.view addSubview:_bannerView];
-    
+    if( arc4random() % 3 == 0 )
+    {
+        BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
+        _baiduView.AdType = BaiduMobAdViewTypeBanner;
+        _baiduView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-60-50, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
+        _baiduView.delegate = self;
+        [self.view addSubview:_baiduView];
+        [_baiduView start];
+
+    }
+    else
+    {
+        CGPoint pt ;
+        
+        pt = CGPointMake(0, [UIScreen mainScreen].bounds.size.height-60-50);
+        GADBannerView * _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner origin:pt];
+        
+        _bannerView.adUnitID = @"ca-app-pub-3058205099381432/7929977146";//调用你的id
+        _bannerView.rootViewController = self;
+        [_bannerView loadRequest:[GADRequest request]];
+        
+        [self.view addSubview:_bannerView];
+    }
 }
-
-
 
 #pragma arguments
 -(CGFloat)getPercent

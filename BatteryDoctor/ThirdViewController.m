@@ -9,7 +9,7 @@
 #import "ThirdViewController.h"
 #import "BaiduMobAdView.h"
 
-@interface ThirdViewController ()<BaiduMobAdViewDelegate>
+@interface ThirdViewController ()<BaiduMobAdViewDelegate,UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
@@ -31,23 +31,23 @@
     }
 
     
-    /*
-     if(1)// rand == 0 )
+    NSURL *   url = nil;
+    
+    int rand = arc4random() / 5;
+    
+     if(rand == 0 )
      {
-     url = [NSURL URLWithString:@"http://toutiao.com/m3261496576/"];
+         url = [NSURL URLWithString:@"http://toutiao.com/m3395676121/"];
      }
      else if( rand == 1 )
      {
-     url = [NSURL URLWithString:@"http://toutiao.com/m3890669865/"];
+         url = [NSURL URLWithString:@"http://toutiao.com/m3890669865/"];
      }
      else
      {
-     url = [NSURL URLWithString:@"http://toutiao.com/m3395676121/"];
+         url = [NSURL URLWithString:@"http://toutiao.com/m3261496576/"];
      }
 
-     */
-    //
-    NSURL *   url = [NSURL URLWithString:@"http://toutiao.com/m3261496576/"];
     
     NSURLRequest *request =[NSURLRequest requestWithURL:url];
     [_webView loadRequest:request];
@@ -78,6 +78,10 @@
     return @"fece40ae";
 }
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    
+}
 
 -(void)layoutAdv
 {

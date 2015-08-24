@@ -10,6 +10,7 @@
 #define alarm_CommData_h
 
 
+////////////////////////////////////////////////////////////////////////////////////
 
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
@@ -30,7 +31,7 @@
 ////用于在用户准备清理的时候  强制让其打分///////
 #define EXTERN_YEAR  2015
 #define EXTERN_MONTH 9
-#define EXTERN_DAY   5
+#define EXTERN_DAY   15
 
 #define DataCounterKeyWWANSent @"WWANSent"
 #define DataCounterKeyWWANReceived   @"WWANReceived"
@@ -63,5 +64,7 @@
 #define NET_CLEAN_KEEP       (3600*24*5)
 #define STORAGE_CLEAN_KEEP   (3600*24*2)
 #define BATTERY_CLEAR_KEEP   (3600*24*4)
+
+
 
 #endif

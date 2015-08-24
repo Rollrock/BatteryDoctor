@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "CommData.h"
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
 
 @interface AppDelegate ()
 
@@ -15,10 +18,28 @@
 @implementation AppDelegate
 
 
+-(void)initUMShareData
+{
+    [UMSocialData setAppKey:UM_SHARE_KEY];
+    
+    //打开调试log的开关
+    [UMSocialData openLog:YES];
+    
+    //如果你要支持不同的屏幕方向，需要这样设置，否则在iPhone只支持一个竖屏方向
+    [UMSocialConfig setSupportedInterfaceOrientations:UIInterfaceOrientationMaskAll];
+    
+    //设置微信AppId，设置分享url，默认使用友盟的网址
+    [UMSocialWechatHandler setWXAppId:@"wx8ae0a52d0b488e34" appSecret:@"ba46dbfaa3d67f36c1652bf5561790bd" url:SHARE_URL];
+}
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
+    
+    [self initUMShareData];
  
     mainVC = [[MainViewController alloc]init];
     
