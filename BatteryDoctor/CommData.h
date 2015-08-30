@@ -28,6 +28,8 @@
 
 #define COLOR_FROM_HEX(hexValue) ([UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0])
 
+
+
 ////用于在用户准备清理的时候  强制让其打分///////
 #define EXTERN_YEAR  2015
 #define EXTERN_MONTH 9
@@ -37,6 +39,11 @@
 #define DataCounterKeyWWANReceived   @"WWANReceived"
 #define DataCounterKeyWiFiSent   @"WiFiSent"
 #define DataCounterKeyWiFiReceived   @"WiFiReceived"
+
+
+#define kNumberOfDaysUntilShowAgain 3
+#define kAppStoreAddress @"https://itunes.apple.com/us/app/dian-chi-yi-sheng-zui-hao/id1033017816?l=zh&ls=1&mt=8"
+#define kAppName @"'电池医生'"
 
 
 #define SHARE_TEXT @"电池医生-最好的电池保护优化专家，安装量最大的手机优化APP  https://itunes.apple.com/us/app/dian-chi-yi-sheng-zui-hao/id1033017816?l=zh&ls=1&mt=8"

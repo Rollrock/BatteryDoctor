@@ -8,10 +8,8 @@
 
 #import "RFRateMe.h"
 #import "UIAlertView+NSCookbook.h"
+#import "CommData.h"
 
-#define kNumberOfDaysUntilShowAgain 3
-#define kAppStoreAddress @"https://itunes.apple.com/us/app/xy-shou-ji-zhu-shou-xing-neng/id1020595864?l=zh&ls=1&mt=8"
-#define kAppName @"'XY手机助手'"
 
 @implementation RFRateMe
 
@@ -83,20 +81,14 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(kAppName, @"")
                                                         message:[NSString stringWithFormat:@"如果你觉得这个APP还不错,给我们评个分吧!"]
                                                        delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"不再提醒", @"")
+                                              cancelButtonTitle:nil
                                               otherButtonTitles:NSLocalizedString(@"好的,现在就去", @""),NSLocalizedString(@"下次再去吧",@""), nil];
     
     [alertView showWithCompletion:^(UIAlertView *alertView, NSInteger buttonIndex) {
         
         switch (buttonIndex) {
+           
             case 0:
-                
-                NSLog(@"No, thanks");
-                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"RateCompleted"];
-                [[NSUserDefaults standardUserDefaults] synchronize];
-                
-                break;
-            case 1:
                 
                 NSLog(@"Rate it now");
                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"RateCompleted"];
@@ -104,7 +96,8 @@
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kAppStoreAddress]];
                 
                 break;
-            case 2:
+                
+            case 1:
                 
                 NSLog(@"Remind me later");
                 NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];

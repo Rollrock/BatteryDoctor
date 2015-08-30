@@ -42,7 +42,7 @@
  
     for( int i = 1; i < 20;++ i )
     {
-        UIImage * img =[UIImage imageNamed:[NSString stringWithFormat:@"%d",i]];
+        UIImage * img =[UIImage imageNamed:[NSString stringWithFormat:@"b%d",i]];
         CGFloat imgW = img.size.width/2.1;
         CGFloat imgH = img.size.height/2.1;
         
