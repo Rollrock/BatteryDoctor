@@ -21,7 +21,7 @@
 -(void)refreshCell:(DeviceInfo*)info
 {
     _ipAddrLab.text = info.ipAddr;
-    _macAddrLab.text = info.macAddr;
+    _macAddrLab.text = [info.macAddr uppercaseString];
     
 }
 

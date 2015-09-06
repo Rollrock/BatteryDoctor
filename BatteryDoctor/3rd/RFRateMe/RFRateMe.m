@@ -13,38 +13,6 @@
 
 @implementation RFRateMe
 
-
-/*
-+(BOOL)showMe
-{
-    NSDateComponents * data = [[NSDateComponents alloc]init];
-    NSCalendar * cal = [NSCalendar currentCalendar];
-    
-    [data setCalendar:cal];
-    [data setYear:2015];
-    [data setMonth:8];
-    [data setDay:29];
-    
-    NSDate * farDate = [cal dateFromComponents:data];
-    
-    NSDate *now = [NSDate date];
-    
-    NSTimeInterval farSec = [farDate timeIntervalSince1970];
-    NSTimeInterval nowSec = [now timeIntervalSince1970];
-    
-    
-    if( nowSec - farSec >= 0 )
-    {
-        return YES;
-    }
-    
-    return NO;
-}
- */
-
-
-
-
 +(void)showRateAlert {
     
     //If rate was completed, we just return if True

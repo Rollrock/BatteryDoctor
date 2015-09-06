@@ -74,11 +74,13 @@
 
 -(void)initLabs
 {
+    //NSLog(@"--%f--",[_waterDelegate getPercent]);
+    
     labPercent = [[UILabel alloc]initWithFrame:CGRectMake(10, 40, self.frame.size.width-20, 40)];
-    labPercent.text = @"80%";
+    //labPercent.text = [NSString stringWithFormat:@"%f%%",[_waterDelegate getPercent]];
     labPercent.font = [UIFont systemFontOfSize:50];
     labPercent.textAlignment = NSTextAlignmentCenter;
-    labPercent.textColor = [UIColor whiteColor];
+    labPercent.textColor = [UIColor blackColor];
     
     [self addSubview:labPercent];
 
@@ -123,7 +125,6 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGMutablePathRef path = CGPathCreateMutable();
     
@@ -159,6 +160,8 @@
     {
         percent = [_waterDelegate getPercent];
     }
+    
+    labPercent.text = [NSString stringWithFormat:@"%d%%",(int)(percent*100)];
     
     return self.frame.size.height * (1-percent);
 }

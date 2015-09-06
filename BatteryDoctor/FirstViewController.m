@@ -144,7 +144,9 @@
         }
         else if( avgChgSpeed == 0 )
         {
-            _batteryTimeLab.text = @"计算中...";
+            NSInteger chagreTime = ((100-currBatteryLev)/100.0)*100;
+            _batteryTimeLab.text = [NSString stringWithFormat:@"%02d:%02d",chagreTime/60,chagreTime%60];
+            //_batteryTimeLab.text = @"计算中...";
         }
         
         _batteryStateLab.text = @"充电中:";
@@ -160,7 +162,9 @@
         
         if( firstBatteryLevel - currBatteryLev == 0 )
         {
-            _batteryTimeLab.text = [NSString stringWithFormat:@"%02d:%02d",23,55];
+            NSInteger time =  (100-currBatteryLev)/100.0*680;
+            
+            _batteryTimeLab.text = [NSString stringWithFormat:@"%02d:%02d",time/60,time%60];
         }
         
         _batteryStateLab.text = @"可使用:";
@@ -209,7 +213,7 @@
 #pragma arguments
 -(CGFloat)getPercent
 {
-    return 0.75;
+    return [SystemSharedServices batteryLevel]/100;
 }
 
 //

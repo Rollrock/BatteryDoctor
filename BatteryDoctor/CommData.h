@@ -33,7 +33,7 @@
 ////用于在用户准备清理的时候  强制让其打分///////
 #define EXTERN_YEAR  2015
 #define EXTERN_MONTH 9
-#define EXTERN_DAY   15
+#define EXTERN_DAY   25
 
 #define DataCounterKeyWWANSent @"WWANSent"
 #define DataCounterKeyWWANReceived   @"WWANReceived"
