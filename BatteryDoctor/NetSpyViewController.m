@@ -322,7 +322,7 @@ int ipIndex = 100;
 
 - (NSString *)publisherId
 {
-    return @"fece40ae";
+    return BAIDU_ADV_ID;
 }
 
 /**
@@ -330,7 +330,7 @@ int ipIndex = 100;
  */
 - (NSString*) appSpec
 {
-    return @"fece40ae";
+    return BAIDU_ADV_ID;
 }
 
 

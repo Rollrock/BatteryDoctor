@@ -46,7 +46,7 @@
     _batteryView.waterDelegate  = self;
 
     //
-    self.title = @"电池体检";
+    self.title = @"电池状态";
     
     {
         UIColor *color = [UIColor whiteColor];
@@ -174,18 +174,21 @@
 
 - (NSString *)publisherId
 {
-    return @"fece40ae";
+    return BAIDU_ADV_ID;
 }
 
+/**
+ *  应用在union.baidu.com上的APPID
+ */
 - (NSString*) appSpec
 {
-    return @"fece40ae";
+    return BAIDU_ADV_ID;
 }
 
 -(void)layoutAdv
 {
     
-    if( arc4random() % 3 == 0 )
+    if( arc4random() % 5 != 0 )
     {
         BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
         _baiduView.AdType = BaiduMobAdViewTypeBanner;

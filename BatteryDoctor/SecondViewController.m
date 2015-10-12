@@ -8,6 +8,7 @@
 
 #import "SecondViewController.h"
 #import "BaiduMobAdView.h"
+#import "CommData.h"
 @import GoogleMobileAds;
 
 @interface SecondViewController ()<BaiduMobAdViewDelegate,UIScrollViewDelegate>
@@ -40,7 +41,7 @@
     //
     const CGFloat perW = [UIScreen mainScreen].bounds.size.width;
  
-    for( int i = 1; i < 20;++ i )
+    for( int i = 1; i < 18;++ i )
     {
         UIImage * img =[UIImage imageNamed:[NSString stringWithFormat:@"b%d",i]];
         CGFloat imgW = img.size.width/2.1;
@@ -51,7 +52,7 @@
         [_contentView addSubview:imgView];
     }
     
-    _contentViewWidhtConst.constant = 19*[UIScreen mainScreen].bounds.size.width;
+    _contentViewWidhtConst.constant = 17*[UIScreen mainScreen].bounds.size.width;
 
     //
     [self layoutAdv];
@@ -60,12 +61,15 @@
 
 - (NSString *)publisherId
 {
-    return @"fece40ae";
+    return BAIDU_ADV_ID;
 }
 
+/**
+ *  应用在union.baidu.com上的APPID
+ */
 - (NSString*) appSpec
 {
-    return @"fece40ae";
+    return BAIDU_ADV_ID;
 }
 
 -(void)layoutAdv

@@ -10,6 +10,7 @@
 #import "CommData.h"
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
+#import "RFRateMe.h"
 
 @interface AppDelegate ()
 
@@ -45,6 +46,7 @@
     
     self.window.rootViewController = mainVC;
     
+    [RFRateMe showRateAlertAfterTimesOpened:3];
 
     [self.window makeKeyAndVisible];
     // Override point for customization after application launch.

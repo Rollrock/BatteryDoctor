@@ -22,8 +22,6 @@
 		485F5D801B884BF700412540 /* tab_2_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 485F5D7A1B884BF700412540 /* tab_2_h.png */; };
 		485F5D811B884BF700412540 /* tab_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 485F5D7B1B884BF700412540 /* tab_3.png */; };
 		485F5D821B884BF700412540 /* tab_3_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 485F5D7C1B884BF700412540 /* tab_3_h.png */; };
-		485F5DC01B88769700412540 /* b20.png in Resources */ = {isa = PBXBuildFile; fileRef = 485F5DAC1B88769700412540 /* b20.png */; };
-		485F5DC11B88769700412540 /* b19.png in Resources */ = {isa = PBXBuildFile; fileRef = 485F5DAD1B88769700412540 /* b19.png */; };
 		485F5DC21B88769700412540 /* b18.png in Resources */ = {isa = PBXBuildFile; fileRef = 485F5DAE1B88769700412540 /* b18.png */; };
 		485F5DC31B88769700412540 /* b17.png in Resources */ = {isa = PBXBuildFile; fileRef = 485F5DAF1B88769700412540 /* b17.png */; };
 		485F5DC41B88769700412540 /* b16.png in Resources */ = {isa = PBXBuildFile; fileRef = 485F5DB01B88769700412540 /* b16.png */; };
@@ -141,8 +139,6 @@
 		485F5F161B88A77E00412540 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F5F151B88A77E00412540 /* CoreMotion.framework */; };
 		485F5F181B88A78600412540 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F5F171B88A78600412540 /* Foundation.framework */; };
 		485F5F1C1B88AB4300412540 /* signTip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 485F5F1B1B88AB4300412540 /* signTip@2x.png */; };
-		485F5F201B88AD2900412540 /* CleanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F5F1D1B88AD2900412540 /* CleanViewController.xib */; };
-		485F5F211B88AD2900412540 /* CleanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485F5F1E1B88AD2900412540 /* CleanViewController.m */; };
 		485F5F2E1B88AD5B00412540 /* NetSpyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F5F221B88AD5B00412540 /* NetSpyViewController.xib */; };
 		485F5F2F1B88AD5B00412540 /* NetSpyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485F5F231B88AD5B00412540 /* NetSpyViewController.m */; };
 		485F5F301B88AD5B00412540 /* NetSpyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F5F251B88AD5B00412540 /* NetSpyTableViewCell.xib */; };
@@ -223,8 +219,6 @@
 		485F5D7A1B884BF700412540 /* tab_2_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_2_h.png; sourceTree = "<group>"; };
 		485F5D7B1B884BF700412540 /* tab_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_3.png; sourceTree = "<group>"; };
 		485F5D7C1B884BF700412540 /* tab_3_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_3_h.png; sourceTree = "<group>"; };
-		485F5DAC1B88769700412540 /* b20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b20.png; sourceTree = "<group>"; };
-		485F5DAD1B88769700412540 /* b19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b19.png; sourceTree = "<group>"; };
 		485F5DAE1B88769700412540 /* b18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b18.png; sourceTree = "<group>"; };
 		485F5DAF1B88769700412540 /* b17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b17.png; sourceTree = "<group>"; };
 		485F5DB01B88769700412540 /* b16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b16.png; sourceTree = "<group>"; };
@@ -430,9 +424,6 @@
 		485F5F171B88A78600412540 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		485F5F191B88A78B00412540 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		485F5F1B1B88AB4300412540 /* signTip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signTip@2x.png"; sourceTree = "<group>"; };
-		485F5F1D1B88AD2900412540 /* CleanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CleanViewController.xib; sourceTree = "<group>"; };
-		485F5F1E1B88AD2900412540 /* CleanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanViewController.m; sourceTree = "<group>"; };
-		485F5F1F1B88AD2900412540 /* CleanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CleanViewController.h; sourceTree = "<group>"; };
 		485F5F221B88AD5B00412540 /* NetSpyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetSpyViewController.xib; sourceTree = "<group>"; };
 		485F5F231B88AD5B00412540 /* NetSpyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetSpyViewController.m; sourceTree = "<group>"; };
 		485F5F241B88AD5B00412540 /* NetSpyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSpyViewController.h; sourceTree = "<group>"; };
@@ -594,8 +585,6 @@
 		485F5D831B8863A800412540 /* batteryKnowedge */ = {
 			isa = PBXGroup;
 			children = (
-				485F5DAC1B88769700412540 /* b20.png */,
-				485F5DAD1B88769700412540 /* b19.png */,
 				485F5DAE1B88769700412540 /* b18.png */,
 				485F5DAF1B88769700412540 /* b17.png */,
 				485F5DB01B88769700412540 /* b16.png */,
@@ -1173,9 +1162,6 @@
 				485F5F2B1B88AD5B00412540 /* NetCleanViewController.xib */,
 				485F5F2C1B88AD5B00412540 /* NetCleanViewController.m */,
 				485F5F2D1B88AD5B00412540 /* NetCleanViewController.h */,
-				485F5F1D1B88AD2900412540 /* CleanViewController.xib */,
-				485F5F1E1B88AD2900412540 /* CleanViewController.m */,
-				485F5F1F1B88AD2900412540 /* CleanViewController.h */,
 				485F5DEA1B88A59F00412540 /* 3rd */,
 				485F5DE71B88A57F00412540 /* CommInfo.m */,
 				485F5DE81B88A57F00412540 /* CommInfo.h */,
@@ -1333,7 +1319,6 @@
 				485F5DC31B88769700412540 /* b17.png in Resources */,
 				485F5DD71B889FF000412540 /* tab_4_h.png in Resources */,
 				4874A5CE1B8AE4ED007DE41F /* 87.png in Resources */,
-				485F5DC01B88769700412540 /* b20.png in Resources */,
 				485F5EC71B88A59F00412540 /* SVProgressHUD.bundle in Resources */,
 				485F5EE21B88A5A000412540 /* UMShareEditViewController.xib in Resources */,
 				4874A5C91B8AE4ED007DE41F /* 1024.png in Resources */,
@@ -1381,7 +1366,6 @@
 				48DDD3371B88208D005BB10A /* Images.xcassets in Resources */,
 				485F5EDF1B88A5A000412540 /* UMSCommentDetailController.xib in Resources */,
 				485F5F471B88B02400412540 /* NavBack@2x.png in Resources */,
-				485F5DC11B88769700412540 /* b19.png in Resources */,
 				485F5D811B884BF700412540 /* tab_3.png in Resources */,
 				485F5D3E1B8845DD00412540 /* FirstViewController.xib in Resources */,
 				485F5EE91B88A5A000412540 /* ios-social-sdk-shake.html in Resources */,
@@ -1391,7 +1375,6 @@
 				4874A5C81B8AE4ED007DE41F /* l6p.png in Resources */,
 				485F5EE11B88A5A000412540 /* UMSCommentInputControlleriPad.xib in Resources */,
 				4874A5CD1B8AE4ED007DE41F /* 80.png in Resources */,
-				485F5F201B88AD2900412540 /* CleanViewController.xib in Resources */,
 				485F5EE61B88A5A000412540 /* UMSShareListController.xib in Resources */,
 				485F5F4B1B88B02400412540 /* cleanIcon.png in Resources */,
 				4874A5B81B8995D8007DE41F /* speed.png in Resources */,
@@ -1445,7 +1428,6 @@
 				485F5EB41B88A59F00412540 /* CJSONSerializedData.m in Sources */,
 				485F5D471B884AE000412540 /* RockTabView.m in Sources */,
 				485F5ECB1B88A5A000412540 /* NSObject+PerformBlockAfterDelay.m in Sources */,
-				485F5F211B88AD2900412540 /* CleanViewController.m in Sources */,
 				485F5F311B88AD5B00412540 /* NetSpyTableViewCell.m in Sources */,
 				485F5ED81B88A5A000412540 /* SSProcessorInfo.m in Sources */,
 				485F5EB51B88A59F00412540 /* CDataScanner_Extensions.m in Sources */,

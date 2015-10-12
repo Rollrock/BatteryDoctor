@@ -29,6 +29,7 @@
 #define COLOR_FROM_HEX(hexValue) ([UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0])
 
 
+#define BAIDU_ADV_ID @"ecba38eb"
 
 ////用于在用户准备清理的时候  强制让其打分///////
 #define EXTERN_YEAR  2015
@@ -42,15 +43,15 @@
 
 
 #define kNumberOfDaysUntilShowAgain 3
-#define kAppStoreAddress @"https://itunes.apple.com/us/app/dian-chi-yi-sheng-zui-hao/id1033017816?l=zh&ls=1&mt=8"
-#define kAppName @"'电池医生'"
+#define kAppStoreAddress @"https://itunes.apple.com/us/app/dian-chi-guan-jia-zhuan-ye/id1033017816?l=zh&ls=1&mt=8"
+#define kAppName @"'电池管家'"
 
 
-#define SHARE_TEXT @"电池医生-最好的电池保护优化专家，安装量最大的手机优化APP  https://itunes.apple.com/us/app/dian-chi-yi-sheng-zui-hao/id1033017816?l=zh&ls=1&mt=8"
-#define SHARE_URL  @"https://itunes.apple.com/us/app/dian-chi-yi-sheng-zui-hao/id1033017816?l=zh&ls=1&mt=8"
+#define SHARE_TEXT @"电池管家-最好的电池管理专家，安装量最大的手机APP  https://itunes.apple.com/us/app/dian-chi-guan-jia-zhuan-ye/id1033017816?l=zh&ls=1&mt=8"
+#define SHARE_URL  @"https://itunes.apple.com/us/app/dian-chi-guan-jia-zhuan-ye/id1033017816?l=zh&ls=1&mt=8"
 #define SHARE_IMAGE  ([UIImage imageNamed:@"58"])
 
-#define UM_SHARE_KEY  @"55b1a17ee0f55a2205000ade"
+#define UM_SHARE_KEY  @"5608a60d67e58e7526000d0d"
 
 //////////////////////////////////////////////
 

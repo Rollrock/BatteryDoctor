@@ -67,7 +67,7 @@
 
 - (NSString *)publisherId
 {
-    return @"fece40ae";
+    return BAIDU_ADV_ID;
 }
 
 /**
@@ -75,7 +75,7 @@
  */
 - (NSString*) appSpec
 {
-    return @"fece40ae";
+    return BAIDU_ADV_ID;
 }
 
 ///这里选用百度广告，因为这个页面时间很少 减少请求时间

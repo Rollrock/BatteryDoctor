@@ -13,7 +13,7 @@
 #import "commData.h"
 #import "CommInfo.h"
 #import "THProgressView.h"
-#import "CleanViewController.h"
+//#import "CleanViewController.h"
 #import "NetSpeedViewController.h"
 #import "BaiduMobAdView.h"
 #import "AppDelegate.h"
@@ -241,8 +241,8 @@
 
 -(void)gotoCleanVC
 {
-    CleanViewController * vc = [[CleanViewController alloc]initWithNibName:@"CleanViewController" bundle:nil];
-    [self.navigationController pushViewController:vc animated:YES];
+    //CleanViewController * vc = [[CleanViewController /alloc]initWithNibName:@"CleanViewController" bundle:nil];
+    //[self.navigationController pushViewController:vc animated:YES];
 }
 
 
@@ -474,7 +474,7 @@
 
 - (NSString *)publisherId
 {
-    return @"fece40ae";
+    return BAIDU_ADV_ID;
 }
 
 /**
@@ -482,9 +482,8 @@
  */
 - (NSString*) appSpec
 {
-    return @"fece40ae";
+    return BAIDU_ADV_ID;
 }
-
 
 -(void)layoutAdv
 {
@@ -495,10 +494,11 @@
     _baiduView.frame = CGRectMake(0, 0, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
     //_baiduView.center = CGPointMake(_advBgView.center.x, _baiduView.center.y);
     _baiduView.delegate = self;
-    [_advBgView addSubview:_baiduView];
+    [_advBgView2 addSubview:_baiduView];
     [_baiduView start];
     
     
+    /*
     //中间的 ADV
     CGPoint pt ;
     
@@ -510,6 +510,7 @@
     [_bannerView loadRequest:[GADRequest request]];
     
     [_advBgView2 addSubview:_bannerView];
+     */
 }
 
 @end
