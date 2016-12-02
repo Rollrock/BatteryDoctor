@@ -9,7 +9,7 @@
 #import "FirstViewController.h"
 #import "VWWWaterView.h"
 #import "SignViewController.h"
-#import "BaiduMobAdView.h"
+#import <BaiduMobAdSDK/BaiduMobAdView.h>
 #import "SystemServices.h"
 #import "CommData.h"
 
@@ -35,6 +35,9 @@
 @property (weak, nonatomic) IBOutlet UIView *signView;
 @property (weak, nonatomic) IBOutlet VWWWaterView *batteryView;
 
+@property (strong,nonatomic ) GADInterstitial * interstitial;
+@property (strong,nonatomic) NSTimer * timer;
+
 @end
 
 @implementation FirstViewController
@@ -45,6 +48,14 @@
     
     _batteryView.waterDelegate  = self;
 
+    
+    //
+    self.interstitial = [[GADInterstitial alloc]initWithAdUnitID:@"ca-app-pub-3058205099381432/2168924745"];
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[ kGADSimulatorID,@"2440bd529647afc62d632f9d424f0679"];
+    
+    [self.interstitial loadRequest:request];
+    [self timer];
     //
     self.title = @"电池状态";
     
@@ -66,6 +77,17 @@
     //
     _batteryHealthLab.text = [NSString stringWithFormat:@"%d分",80+ (int)([SystemSharedServices batteryLevel]/5.1)];
     _chargeCountLab.text = [NSString stringWithFormat:@"%d次", [self getChargeCount] +20];
+}
+
+-(void)showInter
+{
+    if( self.interstitial.isReady )
+    {
+        [self.timer invalidate];
+        self.timer = nil;
+        
+        [self.interstitial presentFromRootViewController:self];
+    }
 }
 
 -(void)setChargeCount
@@ -174,16 +196,9 @@
 
 - (NSString *)publisherId
 {
-    return BAIDU_ADV_ID;
+    return BAIDU_APP_ID;
 }
 
-/**
- *  应用在union.baidu.com上的APPID
- */
-- (NSString*) appSpec
-{
-    return BAIDU_ADV_ID;
-}
 
 -(void)layoutAdv
 {
@@ -192,7 +207,8 @@
     {
         BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
         _baiduView.AdType = BaiduMobAdViewTypeBanner;
-        _baiduView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-60-50, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
+        _baiduView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-60-50, [UIScreen mainScreen].bounds.size.width, kBaiduAdViewBanner468x60.height);
+        _baiduView.AdUnitTag = BAIDU_BANNER_ID;
         _baiduView.delegate = self;
         [self.view addSubview:_baiduView];
         [_baiduView start];
@@ -205,7 +221,7 @@
         pt = CGPointMake(0, [UIScreen mainScreen].bounds.size.height-60-50);
         GADBannerView * _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner origin:pt];
         
-        _bannerView.adUnitID = @"ca-app-pub-3058205099381432/7929977146";//调用你的id
+        _bannerView.adUnitID = @"ca-app-pub-3058205099381432/9692191545";//调用你的id
         _bannerView.rootViewController = self;
         [_bannerView loadRequest:[GADRequest request]];
         
@@ -256,15 +272,13 @@
      */
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSTimer*)timer
+{
+    if( !_timer )
+    {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(showInter) userInfo:nil repeats:YES];
+    }
+    
+    return _timer;
 }
-*/
-
 @end

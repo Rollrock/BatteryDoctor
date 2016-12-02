@@ -13,6 +13,8 @@
 #import "CommInfo.h"
 #import "AppDelegate.h"
 
+#import <BaiduMobAdSDK/BaiduMobAdView.h>
+
 @import GoogleMobileAds;
 
 
@@ -28,6 +30,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *moneyLab;
 @property (weak, nonatomic) IBOutlet UIButton *signBtn;
+
+@property (strong,nonatomic) GADInterstitial * interstitial;
 @end
 
 @implementation SignViewController
@@ -53,10 +57,6 @@
     
     //
     [self layoutADV];
-    //
-    UIBarButtonItem * leftBtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"NavBack"] style:UIBarButtonItemStyleDone target:self action:@selector(leftClicked)];
-    [self.navigationItem setLeftBarButtonItem:leftBtn];
-    
 }
 
 -(void)leftClicked
@@ -67,16 +67,9 @@
 
 - (NSString *)publisherId
 {
-    return BAIDU_ADV_ID;
+    return BAIDU_APP_ID;
 }
 
-/**
- *  应用在union.baidu.com上的APPID
- */
-- (NSString*) appSpec
-{
-    return BAIDU_ADV_ID;
-}
 
 ///这里选用百度广告，因为这个页面时间很少 减少请求时间
 -(void)layoutADV
@@ -95,8 +88,16 @@
     _baiduView.AdType = BaiduMobAdViewTypeBanner;
     _baiduView.frame = CGRectMake(0, 0, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
     _baiduView.delegate = self;
+    _baiduView.AdUnitTag = BAIDU_BANNER_ID;
     [_advBgView addSubview:_baiduView];
     [_baiduView start];
+    
+    //
+    self.interstitial = [[GADInterstitial alloc]initWithAdUnitID:@"ca-app-pub-3058205099381432/2168924745"];
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[ kGADSimulatorID,@"2440bd529647afc62d632f9d424f0679"];
+    
+    [self.interstitial loadRequest:request];
 
 }
 
@@ -155,6 +156,12 @@
 - (IBAction)signClicked
 {
     [self setSignInfo];
+    
+    if( self.interstitial.isReady )
+    {
+        [self.interstitial presentFromRootViewController:self];
+    }
+    
 }
 
 - (IBAction)ReChargeClicked

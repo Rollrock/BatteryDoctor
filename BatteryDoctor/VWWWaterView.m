@@ -76,7 +76,7 @@
 {
     //NSLog(@"--%f--",[_waterDelegate getPercent]);
     
-    labPercent = [[UILabel alloc]initWithFrame:CGRectMake(10, 40, self.frame.size.width-20, 40)];
+    labPercent = [[UILabel alloc]initWithFrame:CGRectMake(10, 60, self.frame.size.width-20, 40)];
     //labPercent.text = [NSString stringWithFormat:@"%f%%",[_waterDelegate getPercent]];
     labPercent.font = [UIFont systemFontOfSize:50];
     labPercent.textAlignment = NSTextAlignmentCenter;
@@ -84,9 +84,9 @@
     
     [self addSubview:labPercent];
 
-    labText = [[UILabel alloc]initWithFrame:CGRectMake(10, 90, self.frame.size.width-20, 40)];
+    labText = [[UILabel alloc]initWithFrame:CGRectMake(10, 120, self.frame.size.width-20, 40)];
     labText.text = @"剩余电量";
-    labText.textColor = [UIColor whiteColor];
+    labText.textColor = [UIColor orangeColor];
     labText.textAlignment = NSTextAlignmentCenter;
     
     [self addSubview:labText];

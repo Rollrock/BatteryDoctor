@@ -7,8 +7,11 @@
 //
 
 #import "SecondViewController.h"
-#import "BaiduMobAdView.h"
+#import <BaiduMobAdSDK/BaiduMobAdView.h>
 #import "CommData.h"
+#import "AppDelegate.h"
+#import "SignViewController.h"
+
 @import GoogleMobileAds;
 
 @interface SecondViewController ()<BaiduMobAdViewDelegate,UIScrollViewDelegate>
@@ -54,22 +57,14 @@
     
     _contentViewWidhtConst.constant = 17*[UIScreen mainScreen].bounds.size.width;
 
-    //
+       //
     [self layoutAdv];
 }
 
 
-- (NSString *)publisherId
+-(NSString *)publisherId
 {
-    return BAIDU_ADV_ID;
-}
-
-/**
- *  应用在union.baidu.com上的APPID
- */
-- (NSString*) appSpec
-{
-    return BAIDU_ADV_ID;
+    return BAIDU_APP_ID;
 }
 
 -(void)layoutAdv
@@ -78,6 +73,7 @@
      _baiduView.AdType = BaiduMobAdViewTypeBanner;
      _baiduView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-60-50, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
      _baiduView.delegate = self;
+    _baiduView.AdUnitTag = BAIDU_BANNER_ID;
      [self.view addSubview:_baiduView];
      [_baiduView start];
     
@@ -87,7 +83,7 @@
     pt = CGPointMake(0, [UIScreen mainScreen].bounds.size.height-60-50);
     _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner origin:pt];
     
-    _bannerView.adUnitID = @"ca-app-pub-3058205099381432/7929977146";//调用你的id
+    _bannerView.adUnitID = @"ca-app-pub-3058205099381432/9692191545";//调用你的id
     _bannerView.rootViewController = self;
     [_bannerView loadRequest:[GADRequest request]];
     
@@ -101,7 +97,7 @@
 {
     CGFloat offset = [scrollView contentOffset].x;
     
-    NSLog(@"offset:%f frame.y:%f",offset,scrollView.frame.size.width);
+    //NSLog(@"offset:%f frame.y:%f",offset,scrollView.frame.size.width);
     
     if( ((int)offset) % ((int)scrollView.frame.size.width) == 0 )
     {

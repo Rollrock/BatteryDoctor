@@ -15,7 +15,7 @@
 #import "THProgressView.h"
 //#import "CleanViewController.h"
 #import "NetSpeedViewController.h"
-#import "BaiduMobAdView.h"
+#import <BaiduMobAdSDK/BaiduMobAdView.h>
 #import "AppDelegate.h"
 #import "NetSpyViewController.h"
 
@@ -474,16 +474,9 @@
 
 - (NSString *)publisherId
 {
-    return BAIDU_ADV_ID;
+    return BAIDU_APP_ID;
 }
 
-/**
- *  应用在union.baidu.com上的APPID
- */
-- (NSString*) appSpec
-{
-    return BAIDU_ADV_ID;
-}
 
 -(void)layoutAdv
 {
@@ -494,6 +487,7 @@
     _baiduView.frame = CGRectMake(0, 0, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
     //_baiduView.center = CGPointMake(_advBgView.center.x, _baiduView.center.y);
     _baiduView.delegate = self;
+    _baiduView.AdUnitTag = BAIDU_BANNER_ID;
     [_advBgView2 addSubview:_baiduView];
     [_baiduView start];
     
@@ -505,7 +499,7 @@
     pt = CGPointMake(0, 3);
     GADBannerView * _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner origin:pt];
     
-    _bannerView.adUnitID = @"ca-app-pub-3058205099381432/7929977146";//调用你的id
+    _bannerView.adUnitID = @"ca-app-pub-3058205099381432/9692191545";//调用你的id
     _bannerView.rootViewController = self;
     [_bannerView loadRequest:[GADRequest request]];
     

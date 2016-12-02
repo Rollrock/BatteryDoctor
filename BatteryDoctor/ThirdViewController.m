@@ -7,7 +7,7 @@
 //
 
 #import "ThirdViewController.h"
-#import "BaiduMobAdView.h"
+#import <BaiduMobAdSDK/BaiduMobAdView.h>
 #import "CommData.h"
 
 
@@ -55,16 +55,9 @@
 
 - (NSString *)publisherId
 {
-    return BAIDU_ADV_ID;
+    return BAIDU_APP_ID;
 }
 
-/**
- *  应用在union.baidu.com上的APPID
- */
-- (NSString*) appSpec
-{
-    return BAIDU_ADV_ID;
-}
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
@@ -79,6 +72,7 @@
         _baiduView.AdType = BaiduMobAdViewTypeBanner;
         _baiduView.frame = CGRectMake(0, 65, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
         _baiduView.delegate = self;
+        _baiduView.AdUnitTag = BAIDU_BANNER_ID;
         [self.view addSubview:_baiduView];
         [_baiduView start];
 

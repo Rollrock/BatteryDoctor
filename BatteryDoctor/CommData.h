@@ -29,12 +29,10 @@
 #define COLOR_FROM_HEX(hexValue) ([UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0])
 
 
-#define BAIDU_ADV_ID @"ecba38eb"
+#define BAIDU_APP_ID @"ecba38eb"
+#define BAIDU_BANNER_ID  @"2356427"
+#define BAIDU_SPLASH_ID @"2356428"
 
-////用于在用户准备清理的时候  强制让其打分///////
-#define EXTERN_YEAR  2015
-#define EXTERN_MONTH 9
-#define EXTERN_DAY   25
 
 #define DataCounterKeyWWANSent @"WWANSent"
 #define DataCounterKeyWWANReceived   @"WWANReceived"

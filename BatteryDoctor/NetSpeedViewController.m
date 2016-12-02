@@ -9,6 +9,7 @@
 #import "NetSpeedViewController.h"
 #import "SpeedResultViewController.h"
 #import "AppDelegate.h"
+
 @import GoogleMobileAds;
 
 
@@ -251,7 +252,7 @@
     pt = CGPointMake(0, 3);
     GADBannerView * _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner origin:pt];
     
-    _bannerView.adUnitID = @"ca-app-pub-3058205099381432/7929977146";//调用你的id
+    _bannerView.adUnitID = @"ca-app-pub-3058205099381432/9692191545";//调用你的id
     _bannerView.rootViewController = self;
     [_bannerView loadRequest:[GADRequest request]];
     

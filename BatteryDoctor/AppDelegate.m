@@ -11,9 +11,16 @@
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
 #import "RFRateMe.h"
+#import "MobClick.h"
 
-@interface AppDelegate ()
+#import <BaiduMobAdSDK/BaiduMobAdSplash.h>
 
+#import "AdvertModel.h"
+
+@interface AppDelegate ()<BaiduMobAdSplashDelegate>
+{
+    BaiduMobAdSplash *splash;
+}
 @end
 
 @implementation AppDelegate
@@ -39,6 +46,9 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
+    [AdvertModel getAdvertReq];
+    
+    [MobClick startWithAppkey:UM_SHARE_KEY reportPolicy:BATCH   channelId:@""];
     
     [self initUMShareData];
  
@@ -47,11 +57,44 @@
     self.window.rootViewController = mainVC;
     
     [RFRateMe showRateAlertAfterTimesOpened:3];
-
+    
+ 
     [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;
 }
+
+- (NSString *)publisherId
+{
+    return BAIDU_APP_ID;
+}
+
+/**
+ *  广告展示成功
+ */
+- (void)splashSuccessPresentScreen:(BaiduMobAdSplash *)splash
+{
+    NSLog(@"splashSuccessPresentScreen");
+}
+
+/**
+ *  广告展示失败
+ */
+- (void)splashlFailPresentScreen:(BaiduMobAdSplash *)splash withError:(BaiduMobFailReason) reason
+{
+    NSLog(@"splashlFailPresentScreen withError:%d",reason);
+    //自定义开屏移除
+}
+
+/**
+ *  广告展示结束
+ */
+- (void)splashDidDismissScreen:(BaiduMobAdSplash *)splash
+{
+    NSLog(@"splashDidDismissScreen");
+    //自定义开屏移除
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

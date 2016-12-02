@@ -51,9 +51,10 @@
 #include <netdb.h>
 #include <sys/socket.h>
 #include <sys/sysctl.h>
-
-
 #import "NetSpyTableViewCell.h"
+#import <BaiduMobAdSDK/BaiduMobAdView.h>
+
+@class BaiduMobAdView;
 
 int ipIndex = 100;
 
@@ -322,15 +323,7 @@ int ipIndex = 100;
 
 - (NSString *)publisherId
 {
-    return BAIDU_ADV_ID;
-}
-
-/**
- *  应用在union.baidu.com上的APPID
- */
-- (NSString*) appSpec
-{
-    return BAIDU_ADV_ID;
+    return BAIDU_APP_ID;
 }
 
 
@@ -352,6 +345,7 @@ int ipIndex = 100;
     _baiduView.frame = CGRectMake(0, 60, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
     //_baiduView.center = CGPointMake(_advBgView.center.x, _baiduView.center.y);
     _baiduView.delegate = self;
+    _baiduView.AdUnitTag = BAIDU_BANNER_ID;
     [_advBgView addSubview:_baiduView];
     [_baiduView start];
 

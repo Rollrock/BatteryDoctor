@@ -11,7 +11,9 @@
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
 #import "FourthViewController.h"
-
+#import "SignViewController.h"
+#import "AppDelegate.h"
+#import "AdvertViewController.h"
 
 @interface MainViewController ()<RockTabDelegate>
 {
@@ -23,6 +25,9 @@
     UINavigationController * naVC2;
     UINavigationController * naVC3;
     UINavigationController * naVC4;
+    
+    
+    UINavigationController * signNav;
     
     NSMutableArray * navArray;
     
@@ -60,16 +65,25 @@
     SecondViewController * sVC = [[SecondViewController alloc]initWithNibName:@"SecondViewController" bundle:nil];
     naVC2 = [[UINavigationController alloc]initWithRootViewController:sVC];
     
-    ThirdViewController * tVC = [[ThirdViewController alloc]initWithNibName:@"ThirdViewController" bundle:nil];
-    naVC3 = [[UINavigationController alloc]initWithRootViewController:tVC];
+    //ThirdViewController * tVC = [[ThirdViewController alloc]initWithNibName:@"ThirdViewController" bundle:nil];
+    //naVC3 = [[UINavigationController alloc]initWithRootViewController:tVC];
 
     FourthViewController * foVC = [[FourthViewController alloc]initWithNibName:@"FourthViewController" bundle:nil];
     naVC4 = [[UINavigationController alloc]initWithRootViewController:foVC];
     
+    
+   
+    SignViewController * singVC = [[SignViewController alloc]initWithNibName:@"SignViewController" bundle:nil];
+    signNav = [[UINavigationController alloc]initWithRootViewController:singVC];
+    
+    AdvertViewController * adverVC = [AdvertViewController new];
+    naVC3 = [[UINavigationController alloc]initWithRootViewController:adverVC];
+    naVC3.navigationBar.translucent = NO;
+    
     [navArray addObject:naVC1];
-    [navArray addObject:naVC2];
-    [navArray addObject:naVC3];
+    [navArray addObject:signNav];
     [navArray addObject:naVC4];
+    [navArray addObject:naVC3];
     
     [self.view insertSubview:naVC1.view belowSubview:tabView];
 
@@ -93,15 +107,5 @@
     [self.view insertSubview:currNC.view belowSubview:tabView];
     
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
