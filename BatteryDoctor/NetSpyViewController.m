@@ -52,13 +52,12 @@
 #include <sys/socket.h>
 #include <sys/sysctl.h>
 #import "NetSpyTableViewCell.h"
-#import <BaiduMobAdSDK/BaiduMobAdView.h>
 
 @class BaiduMobAdView;
 
 int ipIndex = 100;
 
-@interface NetSpyViewController ()<UITableViewDataSource,UITableViewDelegate,BaiduMobAdViewDelegate>
+@interface NetSpyViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     NSString * ipPix;
     
@@ -329,26 +328,6 @@ int ipIndex = 100;
 
 -(void)layoutAdv
 {
-    /*
-    AppDelegate * appDel = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-    
-    if( ![appDel showAdv] )
-    {
-        return;
-    }
-     */
-    
-    
-    //顶部的 ADV
-    BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
-    _baiduView.AdType = BaiduMobAdViewTypeBanner;
-    _baiduView.frame = CGRectMake(0, 60, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
-    //_baiduView.center = CGPointMake(_advBgView.center.x, _baiduView.center.y);
-    _baiduView.delegate = self;
-    _baiduView.AdUnitTag = BAIDU_BANNER_ID;
-    [_advBgView addSubview:_baiduView];
-    [_baiduView start];
-
 }
 
 - (void)didReceiveMemoryWarning {

@@ -13,14 +13,12 @@
 #import "CommInfo.h"
 #import "AppDelegate.h"
 
-#import <BaiduMobAdSDK/BaiduMobAdView.h>
-
 @import GoogleMobileAds;
 
 
 #define SIGN_PER_SCORE    2
 
-@interface SignViewController ()<BaiduMobAdViewDelegate>
+@interface SignViewController ()
 {
     SignInfo * signInfo;
 }
@@ -73,25 +71,7 @@
 
 ///这里选用百度广告，因为这个页面时间很少 减少请求时间
 -(void)layoutADV
-{
-    /*
-    AppDelegate * appDel = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-    
-    if( ![appDel showAdv] )
-    {
-        return;
-    }
-     */
-    
-    //顶部的 ADV
-    BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
-    _baiduView.AdType = BaiduMobAdViewTypeBanner;
-    _baiduView.frame = CGRectMake(0, 0, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
-    _baiduView.delegate = self;
-    _baiduView.AdUnitTag = BAIDU_BANNER_ID;
-    [_advBgView addSubview:_baiduView];
-    [_baiduView start];
-    
+{ 
     //
     self.interstitial = [[GADInterstitial alloc]initWithAdUnitID:@"ca-app-pub-3058205099381432/2168924745"];
     GADRequest *request = [GADRequest request];

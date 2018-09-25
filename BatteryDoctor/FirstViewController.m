@@ -9,7 +9,6 @@
 #import "FirstViewController.h"
 #import "VWWWaterView.h"
 #import "SignViewController.h"
-#import <BaiduMobAdSDK/BaiduMobAdView.h>
 #import "SystemServices.h"
 #import "CommData.h"
 
@@ -19,7 +18,7 @@
 
 #define SystemSharedServices [SystemServices sharedServices]
 
-@interface FirstViewController ()<WaterViewDelegate,BaiduMobAdViewDelegate>
+@interface FirstViewController ()<WaterViewDelegate>
 {
     //电池
     CGFloat firstBatteryLevel;
@@ -205,14 +204,7 @@
     
     if( arc4random() % 5 != 0 )
     {
-        BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
-        _baiduView.AdType = BaiduMobAdViewTypeBanner;
-        _baiduView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-60-50, [UIScreen mainScreen].bounds.size.width, kBaiduAdViewBanner468x60.height);
-        _baiduView.AdUnitTag = BAIDU_BANNER_ID;
-        _baiduView.delegate = self;
-        [self.view addSubview:_baiduView];
-        [_baiduView start];
-
+       
     }
     else
     {

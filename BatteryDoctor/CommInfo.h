@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-//#import "BaiduMobAdView.h"
-#import "BaiduMobAdSDK/BaiduMobAdDelegateProtocol.h"
 
 @interface CommInfo : NSObject
 

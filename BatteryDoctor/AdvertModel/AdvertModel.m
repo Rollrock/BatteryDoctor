@@ -19,7 +19,7 @@
     [aCoder encodeObject:self.url forKey:@"url"];
     [aCoder encodeObject:self.openScore forKey:@"openScore"];
     [aCoder encodeObject:self.appid forKey:@"appid"];
-    [aCoder encodeObject:self.appids forKey:@"appids"];
+    [aCoder encodeObject:self.showApps forKey:@"showApps"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -32,7 +32,7 @@
     self.url = [aDecoder decodeObjectForKey:@"url"];
     self.openScore = [aDecoder decodeObjectForKey:@"openScore"];
     self.appid = [aDecoder decodeObjectForKey:@"appid"];
-    self.appids = [aDecoder decodeObjectForKey:@"appids"];
+    self.showApps = [aDecoder decodeObjectForKey:@"showApps"];
     
     return self;
 }
@@ -47,10 +47,15 @@
     m.url = dict[@"url"];
     m.openScore = dict[@"openScore"];
     m.appid = dict[@"appid"];
-    m.appids = dict[@"appids"];
+    m.showApps = dict[@"showApps"];
+    if ([m.showApps isEqual:[NSNull null]])
+    {
+        m.showApps = @"";
+    }
     
     return m;
 }
+
 
 +(void)getAdvertReq
 {

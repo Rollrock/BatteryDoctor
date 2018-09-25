@@ -19,7 +19,7 @@
 @property(copy,nonatomic)NSString * url;
 @property(copy,nonatomic)NSString * openScore;
 @property(copy,nonatomic)NSString * appid;
-@property(copy,nonatomic)NSString * appids;
+@property(copy,nonatomic)NSString * showApps;
 
 +(id)modelFromDict:(NSDictionary*)dict;
 +(NSArray*)getAdvert;

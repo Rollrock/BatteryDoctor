@@ -37,19 +37,27 @@
     self.tableView.rowHeight = 60;
     [self.tableView setTableFooterView:[UIView new]];
     
-    //需要做一个过滤，bundle id在appids里面的 才会显示出来
+    //
+    NSString * showApps = @"undefined";
+    for( AdvertModel * m in [AdvertModel getAdvert] )
+    {
+        if( [m.appid isEqualToString:[[NSBundle mainBundle] bundleIdentifier]] )
+        {
+            showApps = m.showApps;
+        }
+    }
     
     for( AdvertModel * m in [AdvertModel getAdvert] )
     {
-        if( [m.appids rangeOfString:[[NSBundle mainBundle] bundleIdentifier]].length > 0  || [m.appids isEqualToString:@"ALL"])
+        NSLog(@"showApps:%@",m.showApps);
+        
+        if( ([showApps rangeOfString:m.appid].length > 0))
         {
             [self.array addObject:m];
         }
     }
     
-    //
-    UITapGestureRecognizer * g = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changPSWClicked)];
-    [self.changePSWView addGestureRecognizer:g];
+
     
 }
 

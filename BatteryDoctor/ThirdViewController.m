@@ -7,11 +7,10 @@
 //
 
 #import "ThirdViewController.h"
-#import <BaiduMobAdSDK/BaiduMobAdView.h>
 #import "CommData.h"
 
 
-@interface ThirdViewController ()<BaiduMobAdViewDelegate,UIWebViewDelegate>
+@interface ThirdViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
@@ -53,39 +52,16 @@
 }
 
 
-- (NSString *)publisherId
-{
-    return BAIDU_APP_ID;
-}
-
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    
-}
-
 -(void)layoutAdv
 {
     //顶部/
     {
-        BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
-        _baiduView.AdType = BaiduMobAdViewTypeBanner;
-        _baiduView.frame = CGRectMake(0, 65, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
-        _baiduView.delegate = self;
-        _baiduView.AdUnitTag = BAIDU_BANNER_ID;
-        [self.view addSubview:_baiduView];
-        [_baiduView start];
-
+        
     }
 
     //底部
     {
-        BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
-        _baiduView.AdType = BaiduMobAdViewTypeBanner;
-        _baiduView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-60-50, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
-        _baiduView.delegate = self;
-        [self.view addSubview:_baiduView];
-        [_baiduView start];
+        
     }
 }
 

@@ -7,16 +7,14 @@
 //
 
 #import "SecondViewController.h"
-#import <BaiduMobAdSDK/BaiduMobAdView.h>
 #import "CommData.h"
 #import "AppDelegate.h"
 #import "SignViewController.h"
 
 @import GoogleMobileAds;
 
-@interface SecondViewController ()<BaiduMobAdViewDelegate,UIScrollViewDelegate>
+@interface SecondViewController ()<UIScrollViewDelegate>
 {
-    BaiduMobAdView * _baiduView;
     GADBannerView * _bannerView;
     
 }
@@ -69,15 +67,6 @@
 
 -(void)layoutAdv
 {
-     _baiduView = [[BaiduMobAdView alloc]init];
-     _baiduView.AdType = BaiduMobAdViewTypeBanner;
-     _baiduView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-60-50, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
-     _baiduView.delegate = self;
-    _baiduView.AdUnitTag = BAIDU_BANNER_ID;
-     [self.view addSubview:_baiduView];
-     [_baiduView start];
-    
-    
     CGPoint pt ;
     
     pt = CGPointMake(0, [UIScreen mainScreen].bounds.size.height-60-50);
@@ -106,16 +95,12 @@
         if( bFlag)
         {
             //[self.view bringSubviewToFront:_baiduView];
-            
-            _baiduView.hidden = YES;
-            _bannerView.hidden = NO;
+               _bannerView.hidden = NO;
         }
         else
         {
             //[self.view bringSubviewToFront:_bannerView];
-            
-            _baiduView.hidden = NO;
-            _bannerView.hidden = YES;
+              _bannerView.hidden = YES;
         }
         
         bFlag = !bFlag;

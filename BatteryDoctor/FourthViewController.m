@@ -13,9 +13,7 @@
 #import "commData.h"
 #import "CommInfo.h"
 #import "THProgressView.h"
-//#import "CleanViewController.h"
 #import "NetSpeedViewController.h"
-#import <BaiduMobAdSDK/BaiduMobAdView.h>
 #import "AppDelegate.h"
 #import "NetSpyViewController.h"
 
@@ -27,7 +25,7 @@
 
 #define ANIMATION_DUR 5.0
 
-@interface FourthViewController ()<NSNetServiceDelegate,NSNetServiceBrowserDelegate,BaiduMobAdViewDelegate>
+@interface FourthViewController ()<NSNetServiceDelegate,NSNetServiceBrowserDelegate>
 {
     //
     UIView * faceView;
@@ -472,39 +470,9 @@
 }
 ////
 
-- (NSString *)publisherId
-{
-    return BAIDU_APP_ID;
-}
-
 
 -(void)layoutAdv
 {
-    
-    //顶部的 ADV
-    BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
-    _baiduView.AdType = BaiduMobAdViewTypeBanner;
-    _baiduView.frame = CGRectMake(0, 0, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
-    //_baiduView.center = CGPointMake(_advBgView.center.x, _baiduView.center.y);
-    _baiduView.delegate = self;
-    _baiduView.AdUnitTag = BAIDU_BANNER_ID;
-    [_advBgView2 addSubview:_baiduView];
-    [_baiduView start];
-    
-    
-    /*
-    //中间的 ADV
-    CGPoint pt ;
-    
-    pt = CGPointMake(0, 3);
-    GADBannerView * _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner origin:pt];
-    
-    _bannerView.adUnitID = @"ca-app-pub-3058205099381432/9692191545";//调用你的id
-    _bannerView.rootViewController = self;
-    [_bannerView loadRequest:[GADRequest request]];
-    
-    [_advBgView2 addSubview:_bannerView];
-     */
 }
 
 @end
