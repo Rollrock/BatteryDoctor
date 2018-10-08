@@ -188,6 +188,16 @@
 		4874A6941B8B15DE007DE41F /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4874A6931B8B15DE007DE41F /* AddressBookUI.framework */; };
 		4874A6951B8B1727007DE41F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F5F191B88A78B00412540 /* CoreLocation.framework */; };
 		4876D8FA1C0DDC930047AA47 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4876D8F91C0DDC930047AA47 /* WebKit.framework */; };
+		487D921B216BA0A60085AF41 /* YinPanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D9219216BA0A60085AF41 /* YinPanViewController.m */; };
+		487D921C216BA0A60085AF41 /* YinPanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487D921A216BA0A60085AF41 /* YinPanViewController.xib */; };
+		487D9220216BA33B0085AF41 /* DianChiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D921E216BA33B0085AF41 /* DianChiViewController.m */; };
+		487D9221216BA33B0085AF41 /* DianChiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487D921F216BA33B0085AF41 /* DianChiViewController.xib */; };
+		487D9225216BA36E0085AF41 /* JiBenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D9223216BA36E0085AF41 /* JiBenViewController.m */; };
+		487D9226216BA36E0085AF41 /* JiBenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487D9224216BA36E0085AF41 /* JiBenViewController.xib */; };
+		487D922A216BA39A0085AF41 /* LiuLiangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D9228216BA39A0085AF41 /* LiuLiangViewController.m */; };
+		487D922B216BA39A0085AF41 /* LiuLiangViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487D9229216BA39A0085AF41 /* LiuLiangViewController.xib */; };
+		487D922F216BA3DC0085AF41 /* WangSuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D922D216BA3DC0085AF41 /* WangSuViewController.m */; };
+		487D9230216BA3DC0085AF41 /* WangSuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487D922E216BA3DC0085AF41 /* WangSuViewController.xib */; };
 		48DDD32C1B88208D005BB10A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD32B1B88208D005BB10A /* main.m */; };
 		48DDD32F1B88208D005BB10A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD32E1B88208D005BB10A /* AppDelegate.m */; };
 		48DDD3321B88208D005BB10A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD3311B88208D005BB10A /* ViewController.m */; };
@@ -480,6 +490,21 @@
 		4874A6911B8B15D4007DE41F /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		4874A6931B8B15DE007DE41F /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		4876D8F91C0DDC930047AA47 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		487D9218216BA0A60085AF41 /* YinPanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YinPanViewController.h; sourceTree = "<group>"; };
+		487D9219216BA0A60085AF41 /* YinPanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YinPanViewController.m; sourceTree = "<group>"; };
+		487D921A216BA0A60085AF41 /* YinPanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YinPanViewController.xib; sourceTree = "<group>"; };
+		487D921D216BA33B0085AF41 /* DianChiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DianChiViewController.h; sourceTree = "<group>"; };
+		487D921E216BA33B0085AF41 /* DianChiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DianChiViewController.m; sourceTree = "<group>"; };
+		487D921F216BA33B0085AF41 /* DianChiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DianChiViewController.xib; sourceTree = "<group>"; };
+		487D9222216BA36E0085AF41 /* JiBenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JiBenViewController.h; sourceTree = "<group>"; };
+		487D9223216BA36E0085AF41 /* JiBenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JiBenViewController.m; sourceTree = "<group>"; };
+		487D9224216BA36E0085AF41 /* JiBenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JiBenViewController.xib; sourceTree = "<group>"; };
+		487D9227216BA39A0085AF41 /* LiuLiangViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiuLiangViewController.h; sourceTree = "<group>"; };
+		487D9228216BA39A0085AF41 /* LiuLiangViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiuLiangViewController.m; sourceTree = "<group>"; };
+		487D9229216BA39A0085AF41 /* LiuLiangViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiuLiangViewController.xib; sourceTree = "<group>"; };
+		487D922C216BA3DC0085AF41 /* WangSuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WangSuViewController.h; sourceTree = "<group>"; };
+		487D922D216BA3DC0085AF41 /* WangSuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WangSuViewController.m; sourceTree = "<group>"; };
+		487D922E216BA3DC0085AF41 /* WangSuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WangSuViewController.xib; sourceTree = "<group>"; };
 		48DDD3261B88208D005BB10A /* BatteryDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatteryDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48DDD32A1B88208D005BB10A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48DDD32B1B88208D005BB10A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1058,6 +1083,28 @@
 			path = icon;
 			sourceTree = "<group>";
 		};
+		487D9217216BA0550085AF41 /* New */ = {
+			isa = PBXGroup;
+			children = (
+				487D9218216BA0A60085AF41 /* YinPanViewController.h */,
+				487D9219216BA0A60085AF41 /* YinPanViewController.m */,
+				487D921A216BA0A60085AF41 /* YinPanViewController.xib */,
+				487D921D216BA33B0085AF41 /* DianChiViewController.h */,
+				487D921E216BA33B0085AF41 /* DianChiViewController.m */,
+				487D921F216BA33B0085AF41 /* DianChiViewController.xib */,
+				487D9222216BA36E0085AF41 /* JiBenViewController.h */,
+				487D9223216BA36E0085AF41 /* JiBenViewController.m */,
+				487D9224216BA36E0085AF41 /* JiBenViewController.xib */,
+				487D9227216BA39A0085AF41 /* LiuLiangViewController.h */,
+				487D9228216BA39A0085AF41 /* LiuLiangViewController.m */,
+				487D9229216BA39A0085AF41 /* LiuLiangViewController.xib */,
+				487D922C216BA3DC0085AF41 /* WangSuViewController.h */,
+				487D922D216BA3DC0085AF41 /* WangSuViewController.m */,
+				487D922E216BA3DC0085AF41 /* WangSuViewController.xib */,
+			);
+			path = New;
+			sourceTree = "<group>";
+		};
 		48DDD31D1B88208D005BB10A = {
 			isa = PBXGroup;
 			children = (
@@ -1108,6 +1155,7 @@
 		48DDD3281B88208D005BB10A /* BatteryDoctor */ = {
 			isa = PBXGroup;
 			children = (
+				487D9217216BA0550085AF41 /* New */,
 				480F31071DE724EC004D081D /* GoogleMobileAdsSdkiOS-7.14.0 */,
 				480F307A1DE7242C004D081D /* AdvertModel */,
 				485F5F3B1B88AE4F00412540 /* if_types.h */,
@@ -1300,6 +1348,7 @@
 				48DDD33A1B88208D005BB10A /* LaunchScreen.xib in Resources */,
 				485F5DC41B88769700412540 /* b16.png in Resources */,
 				485F5EC91B88A59F00412540 /* System Services in Resources */,
+				487D9226216BA36E0085AF41 /* JiBenViewController.xib in Resources */,
 				485F5D7D1B884BF700412540 /* tab_1.png in Resources */,
 				485F5DCB1B88769700412540 /* b9.png in Resources */,
 				485F5DCC1B88769700412540 /* b8.png in Resources */,
@@ -1322,12 +1371,14 @@
 				485F5F321B88AD5B00412540 /* NetSpeedViewController.xib in Resources */,
 				485F5D821B884BF700412540 /* tab_3_h.png in Resources */,
 				485F5DD01B88769700412540 /* b4.png in Resources */,
+				487D922B216BA39A0085AF41 /* LiuLiangViewController.xib in Resources */,
 				48DDD3371B88208D005BB10A /* Images.xcassets in Resources */,
 				485F5F471B88B02400412540 /* NavBack@2x.png in Resources */,
 				480F310B1DE724EC004D081D /* README.txt in Resources */,
 				485F5D811B884BF700412540 /* tab_3.png in Resources */,
 				485F5D3E1B8845DD00412540 /* FirstViewController.xib in Resources */,
 				485F5DCA1B88769700412540 /* b10.png in Resources */,
+				487D9221216BA33B0085AF41 /* DianChiViewController.xib in Resources */,
 				485F5F491B88B02400412540 /* cleanStorage.png in Resources */,
 				4874A5C81B8AE4ED007DE41F /* l6p.png in Resources */,
 				4874A5CD1B8AE4ED007DE41F /* 80.png in Resources */,
@@ -1338,8 +1389,10 @@
 				485F5F4C1B88B02400412540 /* cleanBattery.png in Resources */,
 				480F30DE1DE7242D004D081D /* AdvertViewController.xib in Resources */,
 				485F5F4D1B88B02400412540 /* back.png in Resources */,
+				487D921C216BA0A60085AF41 /* YinPanViewController.xib in Resources */,
 				485F5DCF1B88769700412540 /* b5.png in Resources */,
 				485F5F4A1B88B02400412540 /* cleanNet.png in Resources */,
+				487D9230216BA3DC0085AF41 /* WangSuViewController.xib in Resources */,
 				480F30E81DE7242D004D081D /* LICENSE in Resources */,
 				4874A5C61B8AE4ED007DE41F /* l5.png in Resources */,
 				485F5DDC1B88A02D00412540 /* FourthViewController.xib in Resources */,
@@ -1366,6 +1419,7 @@
 				480F30F41DE7242D004D081D /* JSON.m in Sources */,
 				480F30E71DE7242D004D081D /* AFURLSessionManager.m in Sources */,
 				485F5F351B88AD5B00412540 /* NetCleanViewController.m in Sources */,
+				487D9220216BA33B0085AF41 /* DianChiViewController.m in Sources */,
 				485F5ED11B88A5A000412540 /* SSDiskInfo.m in Sources */,
 				485F5F331B88AD5B00412540 /* NetSpeedViewController.m in Sources */,
 				485F5EC41B88A59F00412540 /* RFRateMe.m in Sources */,
@@ -1397,6 +1451,7 @@
 				485F5ED81B88A5A000412540 /* SSProcessorInfo.m in Sources */,
 				480F30EF1DE7242D004D081D /* UIButton+AFNetworking.m in Sources */,
 				485F5ED51B88A5A000412540 /* SSMemoryInfo.m in Sources */,
+				487D922A216BA39A0085AF41 /* LiuLiangViewController.m in Sources */,
 				485F5D411B8845EF00412540 /* VWWWaterView.m in Sources */,
 				480F30FC1DE7242D004D081D /* SDWebImagePrefetcher.m in Sources */,
 				485F5DE31B88A4E300412540 /* SignViewController.m in Sources */,
@@ -1413,6 +1468,7 @@
 				485F5ED01B88A5A000412540 /* SSCarrierInfo.m in Sources */,
 				480F30E31DE7242D004D081D /* AFNetworkReachabilityManager.m in Sources */,
 				485F5D731B884B3700412540 /* ThirdViewController.m in Sources */,
+				487D922F216BA3DC0085AF41 /* WangSuViewController.m in Sources */,
 				480F30F71DE7242D004D081D /* SDWebImageCompat.m in Sources */,
 				480F30F11DE7242D004D081D /* UIProgressView+AFNetworking.m in Sources */,
 				485F5DE91B88A57F00412540 /* CommInfo.m in Sources */,
@@ -1424,7 +1480,9 @@
 				480F30F91DE7242D004D081D /* SDWebImageDownloader.m in Sources */,
 				480F30F61DE7242D004D081D /* SDImageCache.m in Sources */,
 				485F5DDB1B88A02D00412540 /* FourthViewController.m in Sources */,
+				487D9225216BA36E0085AF41 /* JiBenViewController.m in Sources */,
 				480F30FB1DE7242D004D081D /* SDWebImageManager.m in Sources */,
+				487D921B216BA0A60085AF41 /* YinPanViewController.m in Sources */,
 				480F30FF1DE7242D004D081D /* UIImage+MultiFormat.m in Sources */,
 				480F31001DE7242D004D081D /* UIImageView+HighlightedWebCache.m in Sources */,
 				480F30F21DE7242D004D081D /* UIRefreshControl+AFNetworking.m in Sources */,
