@@ -93,7 +93,7 @@
             make.height.mas_equalTo(@60);
         }];
         
-        [view refreshCell:self.timeArray[i]];
+        [view refreshCell:self.timeArray[i] ];
         
         lastView = view;
     }
@@ -153,19 +153,21 @@
     if( !_timeArray )
     {
         NSMutableArray * array = [NSMutableArray new];
-        
+        CGFloat minPer = 3.0;
         DianChiTimeModel * model =nil;
         
         model = [DianChiTimeModel new];
         model.color = [UIColor redColor];
-        model.per = 5;
+        model.per = 3;
+        model.minPer = minPer;
         model.percent = self.percent;
         model.itemName = @"待机";
         [array addObject:model];
         
         model = [DianChiTimeModel new];
         model.color = [UIColor redColor];
-        model.per = 5;
+        model.per = 15;
+        model.minPer = minPer;
         model.percent = self.percent;
         model.itemName = @"看视频";
         [array addObject:model];
@@ -173,20 +175,23 @@
         model = [DianChiTimeModel new];
         model.color = [UIColor redColor];
         model.per = 5;
+        model.minPer = minPer;
         model.percent = self.percent;
         model.itemName = @"看网页";
         [array addObject:model];
         
         model = [DianChiTimeModel new];
         model.color = [UIColor redColor];
-        model.per = 5;
+        model.per = 10;
+        model.minPer = minPer;
         model.percent = self.percent;
         model.itemName = @"听音乐";
         [array addObject:model];
         
         model = [DianChiTimeModel new];
         model.color = [UIColor redColor];
-        model.per = 5;
+        model.per = 10;
+        model.minPer = minPer;
         model.percent = self.percent;
         model.itemName = @"玩游戏";
         [array addObject:model];
@@ -194,13 +199,15 @@
         model = [DianChiTimeModel new];
         model.color = [UIColor redColor];
         model.per = 5;
+        model.minPer = minPer;
         model.percent = self.percent;
         model.itemName = @"聊微信";
         [array addObject:model];
         
         model = [DianChiTimeModel new];
         model.color = [UIColor redColor];
-        model.per = 5;
+        model.per = 8;
+        model.minPer = minPer;
         model.percent = self.percent;
         model.itemName = @"打电话";
         [array addObject:model];
