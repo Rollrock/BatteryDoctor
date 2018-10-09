@@ -10,6 +10,9 @@
 #define alarm_CommData_h
 
 
+#import "SystemServices.h"
+#define SystemSharedServices [SystemServices sharedServices]
+
 ////////////////////////////////////////////////////////////////////////////////////
 
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
@@ -22,6 +25,7 @@
 #define TAB_ICON_H 30
 
 
+#define ZZCircleDegreeToRadian(d) ((d)*M_PI)/180.0  //角度转换为弧度
 
 #define RGB(r,g,b) [UIColor colorWithRed:(r/255.0f) green:(g/255.0f)  blue:(b/255.0f) alpha:(1)]
 #define COMMON_BG_COLOR  RGB(10,10,10)

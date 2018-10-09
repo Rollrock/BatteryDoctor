@@ -62,3 +62,7 @@
 
 
 @end
+
+
+@implementation DianChiTimeModel
+@end

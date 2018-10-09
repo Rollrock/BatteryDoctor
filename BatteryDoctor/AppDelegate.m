@@ -11,8 +11,9 @@
 #import "UMSocialWechatHandler.h"
 #import "RFRateMe.h"
 #import <UMShare/UMShare.h>
-
 #import "AdvertModel.h"
+#import "WangSuViewController.h"
+#import "DianChiViewController.h"
 
 @interface AppDelegate ()
 {
@@ -29,7 +30,10 @@
     
     mainVC = [[MainViewController alloc]init];
     
-    self.window.rootViewController = mainVC;
+    DianChiViewController * vc = [DianChiViewController new];
+    
+    
+    self.window.rootViewController = vc;// mainVC;
     
     [RFRateMe showRateAlertAfterTimesOpened:3];
     
