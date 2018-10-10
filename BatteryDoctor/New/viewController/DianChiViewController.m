@@ -157,7 +157,7 @@
         DianChiTimeModel * model =nil;
         
         model = [DianChiTimeModel new];
-        model.color = [UIColor redColor];
+        model.color = COLOR_FROM_HEX(0x0bbbbb);
         model.per = 3;
         model.minPer = minPer;
         model.percent = self.percent;
@@ -165,7 +165,7 @@
         [array addObject:model];
         
         model = [DianChiTimeModel new];
-        model.color = [UIColor redColor];
+        model.color = COLOR_FROM_HEX(0xce1d1d);
         model.per = 15;
         model.minPer = minPer;
         model.percent = self.percent;
@@ -173,7 +173,7 @@
         [array addObject:model];
         
         model = [DianChiTimeModel new];
-        model.color = [UIColor redColor];
+        model.color = COLOR_FROM_HEX(0xdfae23);
         model.per = 5;
         model.minPer = minPer;
         model.percent = self.percent;
@@ -181,7 +181,7 @@
         [array addObject:model];
         
         model = [DianChiTimeModel new];
-        model.color = [UIColor redColor];
+        model.color = COLOR_FROM_HEX(0x23a8df);
         model.per = 10;
         model.minPer = minPer;
         model.percent = self.percent;
@@ -189,7 +189,7 @@
         [array addObject:model];
         
         model = [DianChiTimeModel new];
-        model.color = [UIColor redColor];
+        model.color = COLOR_FROM_HEX(0xdf23b5);
         model.per = 10;
         model.minPer = minPer;
         model.percent = self.percent;
@@ -197,7 +197,7 @@
         [array addObject:model];
         
         model = [DianChiTimeModel new];
-        model.color = [UIColor redColor];
+        model.color = COLOR_FROM_HEX(0x5fc315);
         model.per = 5;
         model.minPer = minPer;
         model.percent = self.percent;
@@ -205,13 +205,12 @@
         [array addObject:model];
         
         model = [DianChiTimeModel new];
-        model.color = [UIColor redColor];
+        model.color = COLOR_FROM_HEX(0x9223df);
         model.per = 8;
         model.minPer = minPer;
         model.percent = self.percent;
         model.itemName = @"打电话";
         [array addObject:model];
-        
         
         _timeArray = [NSArray arrayWithArray:array];
     }

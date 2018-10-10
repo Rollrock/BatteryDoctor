@@ -34,7 +34,7 @@
     self.procBgLab.layer.cornerRadius = procHeight/2.0;
     self.procBgLab.layer.masksToBounds = YES;
     
-    UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, procWidth*((model.percent/model.per)/(model.percent/model.minPer))  *0.9, procHeight)];
+    UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, procWidth*((model.percent/model.per)/(model.percent/model.minPer))  *0.95, procHeight)];
     view.backgroundColor = model.color;
     
     self.itemLab.text = model.itemName;

@@ -102,10 +102,6 @@
     [self initNavView];
     //
     _waveView.layer.cornerRadius = _waveView.frame.size.width/2.0;
-   
-    //
-    //[self drawBattery];
-    //[self getBatteryTime];
     
     //
     [self drawNetFlow];
@@ -135,22 +131,6 @@
         NSDictionary * dict = [NSDictionary dictionaryWithObjects:@[color,font] forKeys:@[NSForegroundColorAttributeName ,NSFontAttributeName]];
         self.navigationController.navigationBar.titleTextAttributes = dict;
     }
-    
-    {
-        //[self.navigationController.navigationBar setBarTintColor:COMMON_BG_COLOR];
-    }
-
-    
-/*
-    {
-        UIBarButtonItem * leftBtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"leftBarItem"] style:UIBarButtonItemStyleDone target:self action:@selector(leftClicked)];
-        [self.navigationItem setLeftBarButtonItem:leftBtn];
-        
-        UIBarButtonItem * rightBtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"rightBarItem"] style:UIBarButtonItemStyleDone target:self action:@selector(rightClicked)];
-        [self.navigationItem setRightBarButtonItem:rightBtn];
-        
-    }
- */
     
     }
 
@@ -342,7 +322,6 @@
     
     return useInfo;
 }
-
 
 -(void)setNetToStore:(NetUseInfo*)info
 {

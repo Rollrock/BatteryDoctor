@@ -7,8 +7,11 @@
 //
 
 #import "JiBenViewController.h"
+#import "CommData.h"
 
 @interface JiBenViewController ()
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -25,14 +28,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma private
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)initViews
+{
+    NSLog(@"%@",[SystemSharedServices deviceName]);
+    NSLog(@"%@",[SystemSharedServices deviceModel]);
+    NSLog(@"%@",[SystemSharedServices systemName]);
+    NSLog(@"%@",[SystemSharedServices systemsVersion]);
+    NSLog(@"%d",[SystemSharedServices screenWidth]);
+    NSLog(@"%d",[SystemSharedServices screenHeight]);
+    /*
+    NSLog(@"%@",[SystemSharedServices systemsUptime]);
+    NSLog(@"%@",[SystemSharedServices ]);
+    NSLog(@"%@",[SystemSharedServices ]);
+    NSLog(@"%@",[SystemSharedServices ]);
+    NSLog(@"%@",[SystemSharedServices ]);
+    NSLog(@"%@",[SystemSharedServices ]);
+    */
+    
 }
-*/
 
 @end

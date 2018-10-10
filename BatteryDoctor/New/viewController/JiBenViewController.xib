@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JiBenViewController">
             <connections>
+                <outlet property="tableView" destination="Ovo-mP-Nnp" id="MHj-TA-5yh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,7 +19,24 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ovo-mP-Nnp">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ye6-Lg-352"/>
+                        <outlet property="delegate" destination="-1" id="k08-xt-DUX"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Ovo-mP-Nnp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3ek-ca-VXC"/>
+                <constraint firstAttribute="trailing" secondItem="Ovo-mP-Nnp" secondAttribute="trailing" id="Egs-Me-E3R"/>
+                <constraint firstAttribute="bottom" secondItem="Ovo-mP-Nnp" secondAttribute="bottom" id="GMK-UG-dqV"/>
+                <constraint firstItem="Ovo-mP-Nnp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="H7Z-fn-Kf6"/>
+            </constraints>
+            <point key="canvasLocation" x="-336" y="-47"/>
         </view>
     </objects>
 </document>
