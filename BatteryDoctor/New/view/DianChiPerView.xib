@@ -38,10 +38,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLX-U7-VJn">
-                    <rect key="frame" x="70" y="26" width="312" height="21"/>
+                    <rect key="frame" x="70" y="29" width="312" height="18"/>
                     <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="Mqo-wW-va6"/>
+                        <constraint firstAttribute="height" constant="18" id="Mqo-wW-va6"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -50,7 +50,7 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="MLX-U7-VJn" firstAttribute="top" secondItem="nMX-gf-1yL" secondAttribute="bottom" constant="5" id="ISI-WF-fnw"/>
+                <constraint firstItem="MLX-U7-VJn" firstAttribute="top" secondItem="nMX-gf-1yL" secondAttribute="bottom" constant="8" id="ISI-WF-fnw"/>
                 <constraint firstItem="MLX-U7-VJn" firstAttribute="leading" secondItem="sGi-xb-5vO" secondAttribute="trailing" constant="10" id="UFY-Ec-7s2"/>
                 <constraint firstItem="tCq-4S-geb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Zsh-eU-K3I"/>
                 <constraint firstAttribute="trailing" secondItem="nMX-gf-1yL" secondAttribute="trailing" constant="30" id="aQn-Jo-Tu6"/>

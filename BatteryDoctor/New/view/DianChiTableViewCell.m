@@ -8,7 +8,6 @@
 
 #import "DianChiTableViewCell.h"
 
-
 @interface DianChiTableViewCell()
 @property (strong, nonatomic) IBOutlet UILabel *nameLab;
 @property (strong, nonatomic) IBOutlet UILabel *valueLab;

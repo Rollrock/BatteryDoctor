@@ -10,6 +10,10 @@
 #import "CommData.h"
 #import "DianChiPerView.h"
 #import "Masonry.h"
+#import "YCMenuView.h"
+#import "JiBenViewController.h"
+#import "YinPanViewController.h"
+
 
 @interface DianChiViewController ()
 
@@ -34,7 +38,7 @@
     self.percentLab.text = [NSString stringWithFormat:@"%.0f",self.percent * 100];
     self.percentLab.text = [self.percentLab.text stringByAppendingString:@"%"];
     
-    NSLog(@"百分比:%f",self.percent);
+    [self layoutNavs];
 }
 
 -(void)viewDidLayoutSubviews
@@ -42,7 +46,6 @@
     [super viewDidLayoutSubviews];
     
     [self layoutBatteryProcessView];
-    
     [self layoutTimeView];
 }
 
@@ -52,20 +55,15 @@
 }
 
 #pragma private
+-(void)layoutNavs
+{
+    UIBarButtonItem * leftBtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"more"] style:UIBarButtonItemStylePlain target:self action:@selector(leftNavClicked)];
+    self.navigationItem.leftBarButtonItem = leftBtn;
+    [leftBtn setTintColor:[UIColor whiteColor]];
+}
+
 -(void)layoutTimeView
 {
-    
-    /*
-    DianChiPerView * view = [DianChiPerView view];
-    [self.timeBgView addSubview:view];
-    
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.timeBgView);
-    }];
-    
-    [view refreshCell];
-     */
-    
     for( NSLayoutConstraint * con in self.timeBgView.constraints )
     {
         if ((con.firstItem == self.timeBgView)&&(con.firstAttribute == NSLayoutAttributeHeight ))
@@ -139,12 +137,59 @@
     [self.processView.layer addSublayer:layer];
     
     //
-    
 }
 
 -(CGFloat)getBatteryPercent
 {
     return [SystemSharedServices batteryLevel]/100.0;
+}
+#pragma event
+-(void)leftNavClicked
+{
+    YCMenuAction *action = [YCMenuAction actionWithTitle:@"基本信息" image:nil handler:^(YCMenuAction *action) {
+        NSLog(@"点击了%@",action.title);
+        
+        JiBenViewController * vc = [JiBenViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }];
+    YCMenuAction *action1 = [YCMenuAction actionWithTitle:@"内存信息" image:nil handler:^(YCMenuAction *action) {
+        NSLog(@"点击了%@",action.title);
+        
+        YinPanViewController * vc = [YinPanViewController new];
+        vc.type = 1;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }];
+    YCMenuAction *action2 = [YCMenuAction actionWithTitle:@"硬盘信息" image:nil handler:^(YCMenuAction *action) {
+        NSLog(@"点击了%@",action.title);
+        
+        YinPanViewController * vc = [YinPanViewController new];
+        vc.type = 0;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }];
+    YCMenuAction *action3 = [YCMenuAction actionWithTitle:@"内存信息" image:nil handler:^(YCMenuAction *action) {
+        NSLog(@"点击了%@",action.title);
+    }];
+    YCMenuAction *action4 = [YCMenuAction actionWithTitle:@"流量信息" image:nil handler:^(YCMenuAction *action) {
+        NSLog(@"点击了%@",action.title);
+    }];
+    
+    YCMenuAction *action5 = [YCMenuAction actionWithTitle:@"网速测试" image:nil handler:^(YCMenuAction *action) {
+        NSLog(@"点击了%@",action.title);
+    }];
+    
+    YCMenuAction *action6 = [YCMenuAction actionWithTitle:@"设备监控" image:nil handler:^(YCMenuAction *action) {
+        NSLog(@"点击了%@",action.title);
+    }];
+    
+    YCMenuAction *action7 = [YCMenuAction actionWithTitle:@"签到惊喜" image:nil handler:^(YCMenuAction *action) {
+        NSLog(@"点击了%@",action.title);
+    }];
+    
+    YCMenuView *view = [YCMenuView menuWithActions:@[action,action1,action2,action3,action4,action5,action6,action7] width:140 relyonView:self.navigationItem.leftBarButtonItem];
+    [view show];
 }
 
 #pragma setter & getter

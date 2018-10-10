@@ -15,6 +15,9 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong,nonatomic) NSMutableDictionary * dict;
 
+@property (strong,nonatomic) NSArray * nameArray;
+@property (strong,nonatomic) NSArray * valueArray;
+
 @end
 
 @implementation JiBenViewController
@@ -44,14 +47,14 @@
         cell = [[[NSBundle mainBundle]loadNibNamed:cellID owner:self options:nil] lastObject];
     }
     
-    [cell refreshCell:[self.dict allKeys][indexPath.row] value:[self.dict allValues][indexPath.row]];
+    [cell refreshCell:self.nameArray[indexPath.row] value:self.valueArray[indexPath.row]];
     
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.dict allKeys].count;
+    return self.nameArray.count;
 }
 
 #pragma private
@@ -83,6 +86,26 @@
     
 }
 
+-(NSArray*)nameArray
+{
+    if(!_nameArray )
+    {
+        _nameArray = @[@"手机名称",@"手机型号",@"系统版本",@"屏幕宽度",@"屏幕高度",@"运营商",@"电池电量",@"IP地址",@"MAC地址",@"WIFI地址",@"WIFIMAC地址",@"连接WIFI",@"所有进程数",@"活跃进程数"];
+    }
+    
+    return _nameArray;
+}
+
+
+-(NSArray*)valueArray
+{
+    if(!_valueArray )
+    {
+        _valueArray = @[[SystemSharedServices deviceName],[SystemSharedServices deviceModel],[SystemSharedServices systemName],[NSString stringWithFormat:@"%d",[SystemSharedServices screenWidth]],[NSString stringWithFormat:@"%d",[SystemSharedServices screenHeight]],[SystemSharedServices carrierName],[NSString stringWithFormat:@"%.2f",[SystemSharedServices batteryLevel]],[SystemSharedServices currentIPAddress],[SystemSharedServices currentMACAddress],[SystemSharedServices wiFiIPAddress],[SystemSharedServices wiFiMACAddress],[SystemSharedServices connectedToWiFi]?@"已连接":@"未连接",[NSString stringWithFormat:@"%d",[SystemSharedServices numberProcessors]],[NSString stringWithFormat:@"%d",[SystemSharedServices numberActiveProcessors]]];
+    }
+    
+    return _valueArray;
+}
 
 #pragma setter & getter
 -(NSMutableDictionary*)dict
@@ -90,23 +113,23 @@
     if( !_dict )
     {
         _dict = [NSMutableDictionary new];
+        /*
+        [_dict setObject: forKey:];
+        [_dict setObject: forKey:];
+        [_dict setObject: forKey:];
+        [_dict setObject: forKey:];
+        [_dict setObject: forKey:];
+        [_dict setObject: forKey:];
+        [_dict setObject: forKey:];
+        [_dict setObject: forKey:];
+        [_dict setObject: forKey:];
+        [_dict setObject: forKey:];
+        [_dict setObject: forKey:];
+        [_dict setObject: forKey:];
         
-        [_dict setObject:[SystemSharedServices deviceName] forKey:@"手机名称"];
-        [_dict setObject:[SystemSharedServices deviceModel] forKey:@"手机型号"];
-        [_dict setObject:[SystemSharedServices systemName] forKey:@"系统版本"];
-        [_dict setObject:[NSString stringWithFormat:@"%d",[SystemSharedServices screenWidth]] forKey:@"屏幕宽度"];
-        [_dict setObject:[NSString stringWithFormat:@"%d",[SystemSharedServices screenHeight]] forKey:@"屏幕高度"];
-        [_dict setObject:[SystemSharedServices carrierName] forKey:@"运营商"];
-        [_dict setObject:[NSString stringWithFormat:@"%.2f",[SystemSharedServices batteryLevel]] forKey:@"电池电量"];
-        [_dict setObject:[SystemSharedServices currentIPAddress] forKey:@"IP地址"];
-        [_dict setObject:[SystemSharedServices currentMACAddress] forKey:@"MAC地址"];
-        [_dict setObject:[SystemSharedServices wiFiIPAddress] forKey:@"WIFI地址"];
-        [_dict setObject:[SystemSharedServices wiFiMACAddress] forKey:@"WIFIMAC地址"];
-        [_dict setObject:[SystemSharedServices connectedToWiFi]?@"已连接":@"未连接" forKey:@"连接WIFI"];
-        
-        [_dict setObject:[NSString stringWithFormat:@"%d",[SystemSharedServices numberProcessors]] forKey:@"所有进程数"];
-        [_dict setObject:[NSString stringWithFormat:@"%d",[SystemSharedServices numberActiveProcessors]] forKey:@"活跃进程数"];
-        
+        [_dict setObject: forKey:];
+        [_dict setObject: forKey:];
+        */
     }
     
     return _dict;

@@ -212,6 +212,7 @@
 		487D925B216CC4FC0085AF41 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D9251216CC4FC0085AF41 /* ViewController+MASAdditions.m */; };
 		487D9260216DDC300085AF41 /* DianChiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D925E216DDC300085AF41 /* DianChiTableViewCell.m */; };
 		487D9261216DDC300085AF41 /* DianChiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487D925F216DDC300085AF41 /* DianChiTableViewCell.xib */; };
+		487D9265216E0E110085AF41 /* YCMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D9264216E0E110085AF41 /* YCMenuView.m */; };
 		48DDD32C1B88208D005BB10A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD32B1B88208D005BB10A /* main.m */; };
 		48DDD32F1B88208D005BB10A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD32E1B88208D005BB10A /* AppDelegate.m */; };
 		48DDD3321B88208D005BB10A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD3311B88208D005BB10A /* ViewController.m */; };
@@ -550,6 +551,8 @@
 		487D925D216DDC300085AF41 /* DianChiTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DianChiTableViewCell.h; sourceTree = "<group>"; };
 		487D925E216DDC300085AF41 /* DianChiTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DianChiTableViewCell.m; sourceTree = "<group>"; };
 		487D925F216DDC300085AF41 /* DianChiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DianChiTableViewCell.xib; sourceTree = "<group>"; };
+		487D9263216E0E110085AF41 /* YCMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCMenuView.h; sourceTree = "<group>"; };
+		487D9264216E0E110085AF41 /* YCMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCMenuView.m; sourceTree = "<group>"; };
 		48DDD3261B88208D005BB10A /* BatteryDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatteryDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48DDD32A1B88208D005BB10A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48DDD32B1B88208D005BB10A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -982,6 +985,7 @@
 		485F5DEA1B88A59F00412540 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				487D9262216E0E110085AF41 /* YCMenu */,
 				487D9238216CC4FC0085AF41 /* Masonry */,
 				4847AEB0215A21ED007F50E9 /* UMShare */,
 				485F5E361B88A59F00412540 /* PingHelper */,
@@ -1211,6 +1215,15 @@
 			children = (
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		487D9262216E0E110085AF41 /* YCMenu */ = {
+			isa = PBXGroup;
+			children = (
+				487D9263216E0E110085AF41 /* YCMenuView.h */,
+				487D9264216E0E110085AF41 /* YCMenuView.m */,
+			);
+			path = YCMenu;
 			sourceTree = "<group>";
 		};
 		48DDD31D1B88208D005BB10A = {
@@ -1539,6 +1552,7 @@
 				485F5EC21B88A59F00412540 /* SimplePing.m in Sources */,
 				480F31021DE7242D004D081D /* UIView+WebCacheOperation.m in Sources */,
 				485F5ECF1B88A5A000412540 /* SSBatteryInfo.m in Sources */,
+				487D9265216E0E110085AF41 /* YCMenuView.m in Sources */,
 				480F30E41DE7242D004D081D /* AFSecurityPolicy.m in Sources */,
 				480F30F01DE7242D004D081D /* UIImageView+AFNetworking.m in Sources */,
 				480F30F51DE7242D004D081D /* NSData+ImageContentType.m in Sources */,

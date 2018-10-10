@@ -10,4 +10,6 @@
 
 @interface YinPanViewController : UIViewController
 
+@property(assign,nonatomic) int type;// 0 硬盘  1内存
+
 @end

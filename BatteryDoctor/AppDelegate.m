@@ -15,6 +15,7 @@
 #import "WangSuViewController.h"
 #import "DianChiViewController.h"
 #import "JiBenViewController.h"
+#import "YinPanViewController.h"
 
 @interface AppDelegate ()
 {
@@ -32,13 +33,17 @@
     [AdvertModel getAdvertReq];
 #endif
     
-    //mainVC = [[MainViewController alloc]init];
+    DianChiViewController * vc = [DianChiViewController new];
+    UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    nav.navigationBar.translucent = NO;
     
-    //DianChiViewController * vc = [DianChiViewController new];
-    JiBenViewController * vc = [JiBenViewController new];
+    nav.navigationBar.barTintColor = [UIColor blackColor];//HEXTOCOLOR(0x363236);
     
+    NSDictionary *textDic = @{NSFontAttributeName : [UIFont systemFontOfSize:20],
+                              NSForegroundColorAttributeName : [UIColor whiteColor]};
+    [nav.navigationBar setTitleTextAttributes:textDic];
     
-    self.window.rootViewController = vc;// mainVC;
+    self.window.rootViewController = nav;// mainVC;
     
     [RFRateMe showRateAlertAfterTimesOpened:3];
     
