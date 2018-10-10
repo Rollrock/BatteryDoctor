@@ -52,8 +52,6 @@
 		480F31041DE7242D004D081D /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 480F30D51DE7242D004D081D /* SVProgressHUD.bundle */; };
 		480F31051DE7242D004D081D /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 480F30D71DE7242D004D081D /* SVProgressHUD.m */; };
 		480F31061DE7242D004D081D /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 480F30D91DE7242D004D081D /* SVRadialGradientLayer.m */; };
-		480F310A1DE724EC004D081D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480F31081DE724EC004D081D /* GoogleMobileAds.framework */; };
-		480F310B1DE724EC004D081D /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 480F31091DE724EC004D081D /* README.txt */; };
 		4847AECD215A21EE007F50E9 /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4847AEB4215A21ED007F50E9 /* UMCommon.framework */; };
 		4847AECE215A21EE007F50E9 /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4847AEB9215A21ED007F50E9 /* libSocialQQ.a */; };
 		4847AECF215A21EE007F50E9 /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4847AEBC215A21ED007F50E9 /* libSocialSina.a */; };
@@ -322,8 +320,6 @@
 		480F30D71DE7242D004D081D /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		480F30D81DE7242D004D081D /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		480F30D91DE7242D004D081D /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
-		480F31081DE724EC004D081D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		480F31091DE724EC004D081D /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		4847AEB4215A21ED007F50E9 /* UMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommon.framework; sourceTree = "<group>"; };
 		4847AEB9215A21ED007F50E9 /* libSocialQQ.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialQQ.a; sourceTree = "<group>"; };
 		4847AEBA215A21ED007F50E9 /* UMSocialQQHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialQQHandler.h; sourceTree = "<group>"; };
@@ -579,7 +575,6 @@
 				4847AECE215A21EE007F50E9 /* libSocialQQ.a in Frameworks */,
 				4847AED1215A21EE007F50E9 /* UMShare.framework in Frameworks */,
 				4874A6951B8B1727007DE41F /* CoreLocation.framework in Frameworks */,
-				480F310A1DE724EC004D081D /* GoogleMobileAds.framework in Frameworks */,
 				4874A6941B8B15DE007DE41F /* AddressBookUI.framework in Frameworks */,
 				4874A6921B8B15D4007DE41F /* AddressBook.framework in Frameworks */,
 				485F5EF41B88A6F100412540 /* SystemConfiguration.framework in Frameworks */,
@@ -766,15 +761,6 @@
 				480F30D91DE7242D004D081D /* SVRadialGradientLayer.m */,
 			);
 			path = SVProgressHUD;
-			sourceTree = "<group>";
-		};
-		480F31071DE724EC004D081D /* GoogleMobileAdsSdkiOS-7.14.0 */ = {
-			isa = PBXGroup;
-			children = (
-				480F31081DE724EC004D081D /* GoogleMobileAds.framework */,
-				480F31091DE724EC004D081D /* README.txt */,
-			);
-			path = "GoogleMobileAdsSdkiOS-7.14.0";
 			sourceTree = "<group>";
 		};
 		4847AEB0215A21ED007F50E9 /* UMShare */ = {
@@ -1277,7 +1263,6 @@
 			isa = PBXGroup;
 			children = (
 				487D9217216BA0550085AF41 /* New */,
-				480F31071DE724EC004D081D /* GoogleMobileAdsSdkiOS-7.14.0 */,
 				480F307A1DE7242C004D081D /* AdvertModel */,
 				485F5F3B1B88AE4F00412540 /* if_types.h */,
 				485F5F3C1B88AE4F00412540 /* if_ether.h */,
@@ -1497,7 +1482,6 @@
 				487D922B216BA39A0085AF41 /* LiuLiangViewController.xib in Resources */,
 				48DDD3371B88208D005BB10A /* Images.xcassets in Resources */,
 				485F5F471B88B02400412540 /* NavBack@2x.png in Resources */,
-				480F310B1DE724EC004D081D /* README.txt in Resources */,
 				485F5D811B884BF700412540 /* tab_3.png in Resources */,
 				485F5D3E1B8845DD00412540 /* FirstViewController.xib in Resources */,
 				485F5DCA1B88769700412540 /* b10.png in Resources */,
