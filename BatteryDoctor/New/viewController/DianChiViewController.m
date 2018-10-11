@@ -13,6 +13,7 @@
 #import "YCMenuView.h"
 #import "JiBenViewController.h"
 #import "YinPanViewController.h"
+#import "LiuLiangViewController.h"
 
 
 @interface DianChiViewController ()
@@ -167,13 +168,13 @@
         YinPanViewController * vc = [YinPanViewController new];
         vc.type = 0;
         [self.navigationController pushViewController:vc animated:YES];
-        
     }];
-    YCMenuAction *action3 = [YCMenuAction actionWithTitle:@"内存信息" image:nil handler:^(YCMenuAction *action) {
-        NSLog(@"点击了%@",action.title);
-    }];
+   
     YCMenuAction *action4 = [YCMenuAction actionWithTitle:@"流量信息" image:nil handler:^(YCMenuAction *action) {
         NSLog(@"点击了%@",action.title);
+        
+        LiuLiangViewController * vc = [LiuLiangViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
     }];
     
     YCMenuAction *action5 = [YCMenuAction actionWithTitle:@"网速测试" image:nil handler:^(YCMenuAction *action) {
@@ -188,7 +189,7 @@
         NSLog(@"点击了%@",action.title);
     }];
     
-    YCMenuView *view = [YCMenuView menuWithActions:@[action,action1,action2,action3,action4,action5,action6,action7] width:140 relyonView:self.navigationItem.leftBarButtonItem];
+    YCMenuView *view = [YCMenuView menuWithActions:@[action,action1,action2,action4,action5,action6,action7] width:140 relyonView:self.navigationItem.leftBarButtonItem];
     [view show];
 }
 

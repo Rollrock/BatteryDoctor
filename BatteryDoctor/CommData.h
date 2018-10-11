@@ -9,6 +9,7 @@
 #ifndef alarm_CommData_h
 #define alarm_CommData_h
 
+#import "Masonry.h"
 
 #import "SystemServices.h"
 #define SystemSharedServices [SystemServices sharedServices]

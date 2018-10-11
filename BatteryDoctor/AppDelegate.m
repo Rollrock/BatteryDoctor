@@ -16,6 +16,7 @@
 #import "DianChiViewController.h"
 #import "JiBenViewController.h"
 #import "YinPanViewController.h"
+#import "IQKeyboardManager.h"
 
 @interface AppDelegate ()
 {
@@ -27,6 +28,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    
+    //
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = YES;
+    
     
 #ifdef DEBUG
 #else
