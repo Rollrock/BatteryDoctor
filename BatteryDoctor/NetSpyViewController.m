@@ -304,26 +304,25 @@ int ipIndex = 100;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
-
 -(void)refreshTableView
 {
     [_tableView reloadData];
     
     //
     _resultLab.text = [NSString stringWithFormat:@"一共发现%d台设备连接到您的WIFI",deviceArray.count];
-    
 }
-
-
-- (NSString *)publisherId
-{
-    return BAIDU_APP_ID;
-}
-
 
 -(void)layoutAdv
 {
+    GADBannerView * banner = [[GADBannerView alloc]initWithAdSize:kGADAdSizeSmartBannerPortrait];
+    banner.rootViewController = self;
+    banner.adUnitID = @"ca-app-pub-3058205099381432/9692191545";
+    
+    GADRequest * req = [GADRequest request];
+    req.testDevices = @[ @"02257fbde9fc053b183b97056fe93ff4" ];
+    [banner loadRequest:req];
+    
+    [self.advBgView addSubview:banner];
 }
 
 - (void)didReceiveMemoryWarning {

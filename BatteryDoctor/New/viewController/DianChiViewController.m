@@ -24,9 +24,12 @@
 @property (strong, nonatomic) IBOutlet UIView *processView;
 @property (strong, nonatomic) IBOutlet UILabel *percentLab;
 @property (strong, nonatomic) IBOutlet UIView *timeBgView;
+@property (strong, nonatomic) IBOutlet UIView *advBgView;
 
 @property (assign,nonatomic) CGFloat percent;
 @property (strong,nonatomic) NSArray * timeArray;
+
+@property(nonatomic, strong) GADInterstitial *interstitial;
 
 @end
 
@@ -43,6 +46,17 @@
     self.percentLab.text = [self.percentLab.text stringByAppendingString:@"%"];
     
     [self layoutNavs];
+    
+    [self layoutAdvs];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        if (self.interstitial.isReady)
+        {
+            [self.interstitial presentFromRootViewController:self];
+        }
+        
+    });
 }
 
 -(void)viewDidLayoutSubviews
@@ -59,6 +73,27 @@
 }
 
 #pragma private
+
+-(void)layoutAdvs
+{
+    GADBannerView * banner = [[GADBannerView alloc]initWithAdSize:kGADAdSizeSmartBannerPortrait];
+    banner.rootViewController = self;
+    banner.adUnitID = @"ca-app-pub-3058205099381432/9692191545";
+    
+    GADRequest * req = [GADRequest request];
+    req.testDevices = @[ @"02257fbde9fc053b183b97056fe93ff4" ];
+    [banner loadRequest:req];
+    
+    [self.advBgView addSubview:banner];
+    
+    //
+    self.interstitial = [[GADInterstitial alloc]
+                         initWithAdUnitID:@"ca-app-pub-3058205099381432/5728239831"];
+    GADRequest * request = [GADRequest request];
+    request.testDevices = @[ @"02257fbde9fc053b183b97056fe93ff4" ];
+    [self.interstitial loadRequest:request];
+}
+
 -(void)layoutNavs
 {
     UIBarButtonItem * leftBtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"more"] style:UIBarButtonItemStylePlain target:self action:@selector(leftNavClicked)];

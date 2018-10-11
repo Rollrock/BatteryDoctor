@@ -15,6 +15,8 @@
 #include <net/if.h>
 #include <net/if_dl.h>
 
+#import "CommData.h"
+
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define kkFont35 [UIFont systemFontOfSize:30]
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
@@ -28,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *uploadLabel;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayout;
+
+@property(nonatomic, strong) GADInterstitial *interstitial;
 
 @end
 
@@ -108,6 +112,12 @@
 //        NSString* speedStr = [NSString stringWithFormat:@"%@/S", [QBTools formattedFileSize:speed]];
 //        NSLog(@"平均速度为：%@",speedStr);
 //        NSLog(@"相当于带宽：%@",[QBTools formatBandWidth:speed]);
+        
+        if (self.interstitial.isReady)
+        {
+            [self.interstitial presentFromRootViewController:self];
+        }
+        
     } failedBlock:^(NSError *error) {
         
     }];
@@ -132,6 +142,8 @@
     [self.clockDiaView drawScaleWithDivide:100 andRemainder:10 strokeColor:RGBA(255, 255, 255, 0.5) filleColor:[UIColor clearColor]scaleLineNormalWidth:5 scaleLineBigWidth:10];
     // 增加刻度值
     [self.clockDiaView DrawScaleValueWithDivide:10];
+    
+    [self layoutAdv];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -139,14 +151,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)layoutAdv
+{
+    self.interstitial = [[GADInterstitial alloc]
+                         initWithAdUnitID:@"ca-app-pub-3058205099381432/5728239831"];
+    GADRequest * request = [GADRequest request];
+    request.testDevices = @[ @"02257fbde9fc053b183b97056fe93ff4" ];
+    [self.interstitial loadRequest:request];
 }
-*/
 
 @end

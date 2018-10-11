@@ -18,6 +18,9 @@
 #import "YinPanViewController.h"
 #import "IQKeyboardManager.h"
 
+
+@import GoogleMobileAds;
+
 @interface AppDelegate ()
 {
 }
@@ -29,6 +32,8 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
+    //
+    [GADMobileAds configureWithApplicationID:@"ca-app-pub-3058205099381432~8215458343"];
     
     //
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
@@ -36,7 +41,6 @@
     manager.shouldResignOnTouchOutside = YES;
     manager.shouldToolbarUsesTextFieldTintColor = YES;
     manager.enableAutoToolbar = YES;
-    
     
 #ifdef DEBUG
 #else
@@ -49,7 +53,7 @@
     
     nav.navigationBar.barTintColor = [UIColor blackColor];//HEXTOCOLOR(0x363236);
     
-    NSDictionary *textDic = @{NSFontAttributeName : [UIFont systemFontOfSize:20],
+    NSDictionary *textDic = @{NSFontAttributeName : [UIFont systemFontOfSize:22],
                               NSForegroundColorAttributeName : [UIColor whiteColor]};
     [nav.navigationBar setTitleTextAttributes:textDic];
     

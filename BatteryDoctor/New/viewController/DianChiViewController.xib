@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DianChiViewController">
             <connections>
+                <outlet property="advBgView" destination="0Ma-Sd-KCA" id="MOS-I0-Bee"/>
                 <outlet property="percentLab" destination="800-Cz-Ap0" id="N5o-je-hlE"/>
                 <outlet property="processView" destination="M2q-JI-F0J" id="XM8-JK-hGX"/>
                 <outlet property="timeBgView" destination="QnX-Vs-WhV" id="f73-xI-2rj"/>
@@ -27,10 +28,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ww-AX-j1d" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="414"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="449"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2q-JI-F0J">
-                                    <rect key="frame" x="40" y="40" width="294" height="294"/>
+                                    <rect key="frame" x="40" y="75" width="294" height="294"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩余电量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ag-DN-JLd">
                                             <rect key="frame" x="112.5" y="93" width="69.5" height="21"/>
@@ -55,18 +56,28 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QnX-Vs-WhV">
-                                    <rect key="frame" x="0.0" y="354" width="374" height="60"/>
+                                    <rect key="frame" x="0.0" y="389" width="374" height="60"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="L4H-VZ-L2b"/>
                                     </constraints>
                                 </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ma-Sd-KCA">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="55" id="xF0-36-omf"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="M2q-JI-F0J" firstAttribute="top" secondItem="5Ww-AX-j1d" secondAttribute="top" constant="40" id="2UV-rK-Fhi"/>
+                                <constraint firstItem="0Ma-Sd-KCA" firstAttribute="leading" secondItem="5Ww-AX-j1d" secondAttribute="leading" id="IAP-Ih-8BR"/>
+                                <constraint firstAttribute="trailing" secondItem="0Ma-Sd-KCA" secondAttribute="trailing" id="SzI-1s-txM"/>
                                 <constraint firstItem="M2q-JI-F0J" firstAttribute="leading" secondItem="5Ww-AX-j1d" secondAttribute="leading" constant="40" id="Szu-iH-S27"/>
                                 <constraint firstAttribute="trailing" secondItem="QnX-Vs-WhV" secondAttribute="trailing" id="UGl-cd-rBE"/>
+                                <constraint firstItem="0Ma-Sd-KCA" firstAttribute="top" secondItem="5Ww-AX-j1d" secondAttribute="top" id="ddM-qm-NM6"/>
+                                <constraint firstItem="M2q-JI-F0J" firstAttribute="top" secondItem="0Ma-Sd-KCA" secondAttribute="bottom" constant="20" id="f0Q-jp-c6O"/>
                                 <constraint firstAttribute="bottom" secondItem="QnX-Vs-WhV" secondAttribute="bottom" id="fUv-kX-pfO"/>
                                 <constraint firstAttribute="trailing" secondItem="M2q-JI-F0J" secondAttribute="trailing" constant="40" id="kjh-0C-MGb"/>
                                 <constraint firstItem="QnX-Vs-WhV" firstAttribute="leading" secondItem="5Ww-AX-j1d" secondAttribute="leading" id="wQA-Kf-AIN"/>
@@ -90,7 +101,7 @@
                 <constraint firstAttribute="trailing" secondItem="8gS-rM-RC6" secondAttribute="trailing" id="cBZ-a8-cwA"/>
                 <constraint firstAttribute="bottom" secondItem="8gS-rM-RC6" secondAttribute="bottom" id="sOF-rK-eOb"/>
             </constraints>
-            <point key="canvasLocation" x="-283" y="-104"/>
+            <point key="canvasLocation" x="-557" y="-183"/>
         </view>
     </objects>
 </document>

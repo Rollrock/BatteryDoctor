@@ -14,6 +14,8 @@
 #import "SystemServices.h"
 #define SystemSharedServices [SystemServices sharedServices]
 
+@import GoogleMobileAds;
+
 ////////////////////////////////////////////////////////////////////////////////////
 
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
