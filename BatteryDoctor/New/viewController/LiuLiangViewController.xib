@@ -50,7 +50,7 @@
                                     </constraints>
                                     <color key="textColor" red="0.15686274510000001" green="0.68235294120000001" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMG-yl-7w0">
                                     <rect key="frame" x="139" y="35" width="19" height="27"/>
@@ -120,7 +120,7 @@
                 <constraint firstItem="nqv-sA-EUR" firstAttribute="top" secondItem="Qcj-cB-t5E" secondAttribute="bottom" constant="20" id="lxK-Cv-hmu"/>
                 <constraint firstItem="nqv-sA-EUR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="xeZ-LX-pZC"/>
             </constraints>
-            <point key="canvasLocation" x="-553.5" y="5.5"/>
+            <point key="canvasLocation" x="-576" y="29"/>
         </view>
     </objects>
 </document>

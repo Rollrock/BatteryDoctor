@@ -15,7 +15,7 @@
 
 
 @interface NetUseInfo : NSObject<NSCoding>
-@property(assign) NSInteger lastByte;
+@property(assign) NSUInteger lastByte;
 @property(strong) NSDate * lastDate;
 @end
 

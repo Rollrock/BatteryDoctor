@@ -20,6 +20,8 @@
 
 @property (strong, nonatomic) XLWaveProgress * waterView;
 
+@property (assign,nonatomic) BOOL bInit;
+
 @end
 
 @implementation LiuLiangViewController
@@ -32,6 +34,8 @@
     
     self.usedLab.text = [self getNetMonthUse];
     self.totalField.text = [self getTotalStroe];
+    
+    [self.totalField addTarget:self action:@selector(totalFieldDone:) forControlEvents:UIControlEventEditingDidEnd];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,9 +47,12 @@
 {
     [super viewWillLayoutSubviews];
     
-    [self layoutViews];
+    if( !self.bInit )
+    {
+        self.bInit = YES;
+        [self layoutViews];
+    }
 }
-
 
 #pragma private
 
@@ -78,14 +85,10 @@
     
     [self.waterView buildLayout];
     
+    NetUseInfo * useInfo = [self getNetFromStore];
+    self.waterView.progress = (useInfo.lastByte/1048576*1.0)/[[self getTotalStroe] floatValue];
     
-}
-
-
-
--(void)drawNetFlow
-{
-    //_NetMonthUse.text =  [self getNetMonthUse];
+    NSLog(@"%f",useInfo.lastByte/1048576*1.0);
 }
 
 -(BOOL)twoDateSameMonth:(NSDate*)date1 date2:(NSDate*)date2
@@ -181,6 +184,18 @@
     }
     
     return @"";
+}
+
+#pragma event
+-(void)totalFieldDone:(UITextField*)text
+{
+    NetUseInfo * useInfo = [self getNetFromStore];
+    self.waterView.progress = (useInfo.lastByte/1048576*1.0)/[self.totalField.text floatValue];
+    
+    NSLog(@"proc:%f",self.waterView.progress);
+    
+    [self setTotalStore:self.totalField.text];
+    
 }
 
 
