@@ -37,6 +37,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.title = @"签到";
+    
     [self getSignInfo];
     
     if( [self dateSame:[NSDate date] date2:signInfo.lastDate] )

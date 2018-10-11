@@ -227,7 +227,7 @@ int ipIndex = 100;
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 55;
+    return 60;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -241,12 +241,10 @@ int ipIndex = 100;
         cell = [[[NSBundle mainBundle] loadNibNamed:cellId owner:self options:nil] lastObject];
     }
     
-    
     [cell refreshCell:[deviceArray objectAtIndex:indexPath.row]];
     
     return cell;
 }
-
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -254,11 +252,9 @@ int ipIndex = 100;
 }
 
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
     
     self.title = @"网络监控";
     

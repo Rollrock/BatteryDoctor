@@ -15,6 +15,9 @@
 #import "YinPanViewController.h"
 #import "LiuLiangViewController.h"
 #import "NetworkSpeedViewController.h"
+#import "NetSpyViewController.h"
+#import "SignViewController.h"
+#import "AdvertViewController.h"
 
 @interface DianChiViewController ()
 
@@ -61,6 +64,10 @@
     UIBarButtonItem * leftBtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"more"] style:UIBarButtonItemStylePlain target:self action:@selector(leftNavClicked)];
     self.navigationItem.leftBarButtonItem = leftBtn;
     [leftBtn setTintColor:[UIColor whiteColor]];
+    
+    UIBarButtonItem * rightBtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"setting"] style:UIBarButtonItemStylePlain target:self action:@selector(rightNavClicked)];
+    self.navigationItem.rightBarButtonItem = rightBtn;
+    [rightBtn setTintColor:[UIColor whiteColor]];
 }
 
 -(void)layoutTimeView
@@ -144,7 +151,14 @@
 {
     return [SystemSharedServices batteryLevel]/100.0;
 }
+
 #pragma event
+-(void)rightNavClicked
+{
+    AdvertViewController * vc = [AdvertViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 -(void)leftNavClicked
 {
     YCMenuAction *action = [YCMenuAction actionWithTitle:@"基本信息" image:nil handler:^(YCMenuAction *action) {
@@ -187,10 +201,16 @@
     
     YCMenuAction *action6 = [YCMenuAction actionWithTitle:@"设备监控" image:nil handler:^(YCMenuAction *action) {
         NSLog(@"点击了%@",action.title);
+        
+        NetSpyViewController * vc = [NetSpyViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
     }];
     
     YCMenuAction *action7 = [YCMenuAction actionWithTitle:@"签到惊喜" image:nil handler:^(YCMenuAction *action) {
         NSLog(@"点击了%@",action.title);
+        
+        SignViewController * vc = [SignViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
     }];
     
     YCMenuView *view = [YCMenuView menuWithActions:@[action,action1,action2,action4,action5,action6,action7] width:140 relyonView:self.navigationItem.leftBarButtonItem];
