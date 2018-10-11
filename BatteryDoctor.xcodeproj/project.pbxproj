@@ -230,6 +230,11 @@
 		487D92A3216EF6DA0085AF41 /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D9292216EF6DA0085AF41 /* IQToolbar.m */; };
 		487D92A4216EF6DA0085AF41 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D9294216EF6DA0085AF41 /* IQUIView+IQKeyboardToolbar.m */; };
 		487D92A5216EF6DA0085AF41 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 487D9296216EF6DA0085AF41 /* IQKeyboardManager.bundle */; };
+		487D92B0216F2EC40085AF41 /* ClockDialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D92A8216F2EC30085AF41 /* ClockDialView.m */; };
+		487D92B1216F2EC40085AF41 /* MeasurNetTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D92AA216F2EC30085AF41 /* MeasurNetTools.m */; };
+		487D92B2216F2EC40085AF41 /* NetworkSpeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D92AC216F2EC30085AF41 /* NetworkSpeedViewController.m */; };
+		487D92B3216F2EC40085AF41 /* NetworkSpeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487D92AD216F2EC30085AF41 /* NetworkSpeedViewController.xib */; };
+		487D92B4216F2EC40085AF41 /* QBTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 487D92AF216F2EC30085AF41 /* QBTools.m */; };
 		48DDD32C1B88208D005BB10A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD32B1B88208D005BB10A /* main.m */; };
 		48DDD32F1B88208D005BB10A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD32E1B88208D005BB10A /* AppDelegate.m */; };
 		48DDD3321B88208D005BB10A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD3311B88208D005BB10A /* ViewController.m */; };
@@ -605,6 +610,15 @@
 		487D9293216EF6DA0085AF41 /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
 		487D9294216EF6DA0085AF41 /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
 		487D9296216EF6DA0085AF41 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		487D92A7216F2EC30085AF41 /* ClockDialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockDialView.h; sourceTree = "<group>"; };
+		487D92A8216F2EC30085AF41 /* ClockDialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockDialView.m; sourceTree = "<group>"; };
+		487D92A9216F2EC30085AF41 /* MeasurNetTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeasurNetTools.h; sourceTree = "<group>"; };
+		487D92AA216F2EC30085AF41 /* MeasurNetTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeasurNetTools.m; sourceTree = "<group>"; };
+		487D92AB216F2EC30085AF41 /* NetworkSpeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkSpeedViewController.h; sourceTree = "<group>"; };
+		487D92AC216F2EC30085AF41 /* NetworkSpeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkSpeedViewController.m; sourceTree = "<group>"; };
+		487D92AD216F2EC30085AF41 /* NetworkSpeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkSpeedViewController.xib; sourceTree = "<group>"; };
+		487D92AE216F2EC30085AF41 /* QBTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBTools.h; sourceTree = "<group>"; };
+		487D92AF216F2EC30085AF41 /* QBTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBTools.m; sourceTree = "<group>"; };
 		48DDD3261B88208D005BB10A /* BatteryDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatteryDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48DDD32A1B88208D005BB10A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48DDD32B1B88208D005BB10A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1181,6 +1195,7 @@
 		487D9217216BA0550085AF41 /* New */ = {
 			isa = PBXGroup;
 			children = (
+				487D92A6216F2EC30085AF41 /* NetworkSpeed */,
 				487D925C216CC60D0085AF41 /* model */,
 				487D9232216CBE830085AF41 /* view */,
 				487D9231216CBE6F0085AF41 /* viewController */,
@@ -1367,6 +1382,22 @@
 				487D9296216EF6DA0085AF41 /* IQKeyboardManager.bundle */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		487D92A6216F2EC30085AF41 /* NetworkSpeed */ = {
+			isa = PBXGroup;
+			children = (
+				487D92A7216F2EC30085AF41 /* ClockDialView.h */,
+				487D92A8216F2EC30085AF41 /* ClockDialView.m */,
+				487D92A9216F2EC30085AF41 /* MeasurNetTools.h */,
+				487D92AA216F2EC30085AF41 /* MeasurNetTools.m */,
+				487D92AB216F2EC30085AF41 /* NetworkSpeedViewController.h */,
+				487D92AC216F2EC30085AF41 /* NetworkSpeedViewController.m */,
+				487D92AD216F2EC30085AF41 /* NetworkSpeedViewController.xib */,
+				487D92AE216F2EC30085AF41 /* QBTools.h */,
+				487D92AF216F2EC30085AF41 /* QBTools.m */,
+			);
+			path = NetworkSpeed;
 			sourceTree = "<group>";
 		};
 		48DDD31D1B88208D005BB10A = {
@@ -1620,6 +1651,7 @@
 				485F5DC81B88769700412540 /* b12.png in Resources */,
 				485F5DE21B88A4E300412540 /* SignViewController.xib in Resources */,
 				485F5D801B884BF700412540 /* tab_2_h.png in Resources */,
+				487D92B3216F2EC40085AF41 /* NetworkSpeedViewController.xib in Resources */,
 				485F5DD61B889FF000412540 /* tab_4.png in Resources */,
 				485F5DD11B88769700412540 /* b3.png in Resources */,
 				485F5F4F1B88B1FB00412540 /* sep_line.png in Resources */,
@@ -1688,6 +1720,7 @@
 				487D925B216CC4FC0085AF41 /* ViewController+MASAdditions.m in Sources */,
 				485F5F351B88AD5B00412540 /* NetCleanViewController.m in Sources */,
 				487D929A216EF6DA0085AF41 /* IQUIView+Hierarchy.m in Sources */,
+				487D92B2216F2EC40085AF41 /* NetworkSpeedViewController.m in Sources */,
 				487D9220216BA33B0085AF41 /* DianChiViewController.m in Sources */,
 				485F5ED11B88A5A000412540 /* SSDiskInfo.m in Sources */,
 				485F5F331B88AD5B00412540 /* NetSpeedViewController.m in Sources */,
@@ -1707,6 +1740,7 @@
 				480F31011DE7242D004D081D /* UIImageView+WebCache.m in Sources */,
 				480F30E11DE7242D004D081D /* AsynchronousOperation.m in Sources */,
 				487D9253216CC4FC0085AF41 /* MASConstraint.m in Sources */,
+				487D92B1216F2EC40085AF41 /* MeasurNetTools.m in Sources */,
 				487D9297216EF6DA0085AF41 /* IQNSArray+Sort.m in Sources */,
 				480F30FD1DE7242D004D081D /* UIButton+WebCache.m in Sources */,
 				480F30ED1DE7242D004D081D /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -1739,6 +1773,7 @@
 				480F30FC1DE7242D004D081D /* SDWebImagePrefetcher.m in Sources */,
 				485F5DE31B88A4E300412540 /* SignViewController.m in Sources */,
 				487D92A4216EF6DA0085AF41 /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				487D92B4216F2EC40085AF41 /* QBTools.m in Sources */,
 				480F31061DE7242D004D081D /* SVRadialGradientLayer.m in Sources */,
 				480F30EE1DE7242D004D081D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				48DDD32F1B88208D005BB10A /* AppDelegate.m in Sources */,
@@ -1778,6 +1813,7 @@
 				480F30FF1DE7242D004D081D /* UIImage+MultiFormat.m in Sources */,
 				480F31001DE7242D004D081D /* UIImageView+HighlightedWebCache.m in Sources */,
 				480F30F21DE7242D004D081D /* UIRefreshControl+AFNetworking.m in Sources */,
+				487D92B0216F2EC40085AF41 /* ClockDialView.m in Sources */,
 				485F5EDA1B88A5A000412540 /* THProgressView.m in Sources */,
 				480F30E21DE7242D004D081D /* AFHTTPSessionManager.m in Sources */,
 				480F30FE1DE7242D004D081D /* UIImage+GIF.m in Sources */,

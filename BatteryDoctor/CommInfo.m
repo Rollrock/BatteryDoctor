@@ -19,7 +19,7 @@
     self = [super init];
     if( self )
     {
-        self.lastByte = [aDecoder decodeIntForKey:@"lastByte"];
+        self.lastByte = [aDecoder decodeIntegerForKey:@"lastByte"];
         self.lastDate = [aDecoder decodeObjectForKey:@"lastDate"];
     }
     

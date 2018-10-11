@@ -14,7 +14,7 @@
 #import "JiBenViewController.h"
 #import "YinPanViewController.h"
 #import "LiuLiangViewController.h"
-
+#import "NetworkSpeedViewController.h"
 
 @interface DianChiViewController ()
 
@@ -179,6 +179,10 @@
     
     YCMenuAction *action5 = [YCMenuAction actionWithTitle:@"网速测试" image:nil handler:^(YCMenuAction *action) {
         NSLog(@"点击了%@",action.title);
+        
+        NetworkSpeedViewController * vc = [NetworkSpeedViewController new];
+        [self presentViewController:vc animated:YES completion:nil];
+        
     }];
     
     YCMenuAction *action6 = [YCMenuAction actionWithTitle:@"设备监控" image:nil handler:^(YCMenuAction *action) {

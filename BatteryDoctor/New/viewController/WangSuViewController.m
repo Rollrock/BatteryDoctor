@@ -10,6 +10,9 @@
 
 @interface WangSuViewController ()
 
+@property (strong, nonatomic) IBOutlet UIImageView *pointImgView;
+
+
 @end
 
 @implementation WangSuViewController
@@ -24,6 +27,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma event
+-(void)showPointView
+{
+    [UIView animateWithDuration:0.5 animations:^{
+
+        CGAffineTransform transform =CGAffineTransformMakeRotation(M_PI/4);
+        //[btn setTransform:transform];
+        
+    } completion:^(BOOL finished) {
+        //btn.transform = CGAffineTransformIdentity;
+    }];
 }
 
 @end
